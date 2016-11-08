@@ -13,12 +13,11 @@ public class Operations {
 		Patient newPatient = new Patient(fio);
 		return newPatient;
 	}
-	public static Patient changeDoctorOfPatient(Patient patientToChange, Doctor newDoctor){
+	public static void changeDoctorOfPatient(Patient patientToChange, Doctor newDoctor){
 		Doctor oldDoctor = patientToChange.getDoctor();
 		oldDoctor.patients.remove(patientToChange);
 		patientToChange.setDoctor(newDoctor);
 		newDoctor.patients.add(patientToChange);
-		return patientToChange;
 	}
 	public static void showPatientsOfDoctor(Doctor doctor){
 		System.out.println("kolichestvo pacientov vracha" + doctor.patients.size());
