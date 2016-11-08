@@ -6,7 +6,7 @@ import classes.Human;
 public class Operations {
 
 	public static Human addHuman(String fio){
-		Doctor newDoctor = new Doctor(fio);
-		return newDoctor;
+		Human newHuman = new Human(fio);
+		return newHuman;
 	}
 }
