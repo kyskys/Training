@@ -1,7 +1,5 @@
 package util;
 
-import java.util.ArrayList;
-
 import classes.Doctor;
 import classes.Patient;
 
@@ -23,7 +21,12 @@ public class Operations {
 		return patientToChange;
 	}
 	public static void showPatientsOfDoctor(Doctor doctor){
-		System.out.println("kolichestvo pacientov" + doctor.patients.size());
+		System.out.println("kolichestvo pacientov vracha" + doctor.patients.size());
 	}
-	
+	public static void showAllPatients(Patient[] mas){
+		System.out.println("kolichestvo pacientov" + mas.length);
+	}
+	public static void showAllDoctors(Doctor[] mas){
+		System.out.println("kolichestvo doctorov" + mas.length);
+	}
 }
