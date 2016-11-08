@@ -1,10 +1,10 @@
 package classes;
 import util.Role;
 
-public abstract class Man {
+public abstract class Human {
 private String fio;
 private Role role;
-public Man (String fio){
+public Human (String fio){
 	this.setFio(fio);
 }
 

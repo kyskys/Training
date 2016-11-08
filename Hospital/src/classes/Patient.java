@@ -1,7 +1,7 @@
 package classes;
 import util.Role;
 
-public class Patient extends Man{
+public class Patient extends Human{
 	private Doctor doctor;
 	public Patient (String fio){
 	super(fio);
