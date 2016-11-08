@@ -4,10 +4,10 @@ import util.Role;
 public abstract class Man {
 private String fio;
 private Role role;
-public Man (String fio, Role role){
+public Man (String fio){
 	this.setFio(fio);
-	this.setRole(role);
 }
+
 public String getFio() {
 	return fio;
 }
