@@ -17,13 +17,13 @@ public class Operations {
 	}
 	public static Patient changeDoctorOfPatient(Patient patientToChange, Doctor newDoctor){
 		Doctor oldDoctor = patientToChange.getDoctor();
-		oldDoctor.setPatients();//che to bydet s ydaleniem pacienta
+		oldDoctor.patients.remove(patientToChange);
 		patientToChange.setDoctor(newDoctor);
-		newDoctor.setPatients();//toje che to nado s pacientom sdelat
+		newDoctor.patients.add(patientToChange);
 		return patientToChange;
 	}
 	public static void showPatientsOfDoctor(Doctor doctor){
-		ArrayList<Patient> list = doctor.getPatients();
-		System.out.println("kolichestvo pacientov" + list.size());
+		System.out.println("kolichestvo pacientov" + doctor.patients.size());
 	}
+	
 }
