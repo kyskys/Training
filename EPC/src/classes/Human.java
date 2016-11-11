@@ -3,9 +3,8 @@ package classes;
 public abstract class Human {
 private String fio;
 private Role role;
-public Human (String fio, Role role){
+public Human (String fio){
 	this.setFio(fio);
-	this.setRole(role);
 }
 public String getFio() {
 	return fio;
