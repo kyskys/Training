@@ -1,4 +1,4 @@
-package classes;
+package model;
 
 public class Course {
 	
@@ -6,8 +6,9 @@ private String nameOfCourse;
 private String informationOfCourse;
 private Lection[] lections;
 private Lector lector;
-public Course(){
-	
+public Course(String name, String information){
+	nameOfCourse=name;
+	informationOfCourse=information;
 }
 public Lection[] getLections() {
 	return lections;
