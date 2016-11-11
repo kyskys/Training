@@ -1,11 +1,14 @@
 package classes;
 
-import java.time.LocalDate;
-
 public class Course {
-private LocalDate date;
-private Lector lector;
+private Lection[] lections;
 public Course(){
 	
+}
+public Lection[] getLections() {
+	return lections;
+}
+public void setLections(Lection[] lections) {
+	this.lections = lections;
 }
 }
