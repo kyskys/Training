@@ -18,4 +18,7 @@ public Role getRole() {
 public void setRole(Role role) {
 	this.role = role;
 }
+public enum Role {
+LECTOR, LISTENER;
+}
 }
