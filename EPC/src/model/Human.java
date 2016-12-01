@@ -1,16 +1,9 @@
 package model;
 
-public abstract class Human {
-private String fio;
+public abstract class Human extends Abstract{
 private Role role;
-public Human (String fio){
-	this.setFio(fio);
-}
-public String getFio() {
-	return fio;
-}
-public void setFio(String fio) {
-	this.fio = fio;
+public Human (String name){
+	super.setName(name);
 }
 public Role getRole() {
 	return role;
