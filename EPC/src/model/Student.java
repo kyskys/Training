@@ -1,8 +1,8 @@
 package model;
 
-public class Listener extends Human{
+public class Student extends Human{
 
-	public Listener(String fio) {
+	public Student(String fio) {
 		super(fio);
 		super.setRole(Role.LISTENER);
 	}
