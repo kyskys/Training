@@ -1,13 +1,13 @@
 package model;
 
-public class Course {
-	
-private String nameOfCourse;
+public class Course extends Abstract{
+
 private String informationOfCourse;
 private Lection[] lections;
+private Student[] students;
 private Lector lector;
 public Course(String name, String information){
-	nameOfCourse=name;
+	super.setName(name);
 	informationOfCourse=information;
 }
 public Lection[] getLections() {
@@ -22,16 +22,16 @@ public Lector getLector() {
 public void setLector(Lector lector) {
 	this.lector = lector;
 }
-public String getNameOfCourse() {
-	return nameOfCourse;
-}
-public void setNameOfCourse(String nameOfCourse) {
-	this.nameOfCourse = nameOfCourse;
-}
 public String getInformationOfCourse() {
 	return informationOfCourse;
 }
 public void setInformationOfCourse(String informationOfCourse) {
 	this.informationOfCourse = informationOfCourse;
+}
+public Student[] getStudents() {
+	return students;
+}
+public void setStudents(Student[] students) {
+	this.students = students;
 }
 }
