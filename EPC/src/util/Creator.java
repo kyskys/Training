@@ -1,31 +1,39 @@
 package util;
 
-import java.io.Console;
+import java.util.ArrayList;
+import java.util.Date;
 
+import model.Abstract;
 import model.Course;
+import model.Lection;
 import model.Lector;
-import util.Helper;
+import model.Student;
 
 public class Creator {
 	
 
-public void addCourse (String name, String info) {
+public static Course addCourse (String name, String info) {
 	Course course = new Course(name,info);
-	course.setLector(addLector());
-	
+	return course;
 }
 
-public Lector addLector () {
-	Lector[] lectors = new Lector[5];//еще не придумал как брать ссылку на всех, будет пока так
-	try {
-		if (lectors[0]==null) {
-			lectors[0] = new Lector("name");//создает новый, если список лекторов пуст
-		}
-		else return (Lector) Helper.selectSmtng(lectors); //че то ошибка, слаик, подскажи
-	}
-	catch { //не хочет, пишет add finally, подскажи
-		System.out.println("oshibka, povtorite");
-		addLector();
-	}
+public static Lector addLector (String name) {
+	Lector lector = new Lector(name);
+	return lector;
 }
+
+public static Student addStudent (String name) {
+	Student stud = new Student(name);
+	return stud;
+}
+
+public static Lection addLection (String name, Date date) {
+	Lection lect = new Lection(name, date);
+	return lect;
+}
+
+public static void delete (ArrayList<Abstract> mas, Abstract abs)	{
+	mas.remove(abs);
+}
+
 }
