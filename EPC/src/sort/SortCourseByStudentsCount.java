@@ -4,7 +4,7 @@ import java.util.Comparator;
 
 import model.Course;
 
-public class SortByCount implements Comparator<Course>{
+public class SortCourseByStudentsCount implements Comparator<Course>{
 
 	@Override
 	public int compare(Course o1, Course o2) {
