@@ -1,20 +1,16 @@
 package model;
 
+import java.util.ArrayList;
+
 public class Course extends Abstract{
 
 private String informationOfCourse;
-private Lection[] lections;
-private Student[] students;
+private ArrayList<Lection> lections;
+private ArrayList<Student> students;
 private Lector lector;
 public Course(String name, String information){
 	super.setName(name);
 	informationOfCourse=information;
-}
-public Lection[] getLections() {
-	return lections;
-}
-public void setLections(Lection[] lections) {
-	this.lections = lections;
 }
 public Lector getLector() {
 	return lector;
@@ -28,10 +24,16 @@ public String getInformationOfCourse() {
 public void setInformationOfCourse(String informationOfCourse) {
 	this.informationOfCourse = informationOfCourse;
 }
-public Student[] getStudents() {
+public ArrayList<Lection> getLections() {
+	return lections;
+}
+public void setLections(ArrayList<Lection> lections) {
+	this.lections = lections;
+}
+public ArrayList<Student> getStudents() {
 	return students;
 }
-public void setStudents(Student[] students) {
+public void setStudents(ArrayList<Student> students) {
 	this.students = students;
 }
 }
