@@ -32,7 +32,10 @@ public class Helper {
 		}
 		}		
 	}
-	public static void showDescriptionOfCourse(ArrayList<Course> courses) {
-		
+	public static void showDescriptionOfCourse(ArrayList<Course> courses, int num) {
+		Course c = courses.get(num); //для того, чтобы каждый раз не вытаскивать из списка курсов 
+		//(ходит миф, что так продуктивнее, если нет - поправь
+		System.out.println("information:"+c.getInformationOfCourse()+"/n"+
+		"lector:"+c.getLector().getName()+"/n"+"students:"+util.Utilites.showStudents(c));
 	}
 }
