@@ -38,4 +38,16 @@ public class Helper {
 		System.out.println("information:"+c.getInformationOfCourse()+"/n"+
 		"lector:"+c.getLector().getName()+"/n"+"students:"+util.Utilites.showStudents(c));
 	}
+	public static void sortLectionsOfCourse (String select, ArrayList<Course> courses, int num) {
+		ArrayList<Lection> lections = courses.get(num).getLections();
+		switch(select)
+		{
+		case ("alphabet"): {
+			lections.sort(new SortByName());
+		}
+		case ("date"): {
+			lections.sort(new SortLectionByDate());
+		}
+		}
+	}
 }
