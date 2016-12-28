@@ -6,36 +6,37 @@ import java.util.Date;
 import model.*;
 
 public class Utilites {
-	public static String showStudents (Course course) {
+	public static void showStudents (Course course) {
 		ArrayList<Student> students = course.getStudents();
-		String s = "";
-		for (int i=0;i<students.size();++i) {
-			s+=students.get(i).getName()+", ";
+		StringBuilder s = new StringBuilder();
+		for(Student stud : students) {
+			s.append(stud.getName());
 		}
-		return s;
+		System.out.println(s);
 	}
-	public static void showCoursesAfterSort(ArrayList<Course> abs) {
-		for(int i=0;i<abs.size();++i) {
-			System.out.println(abs.get(i).getName());
-		}
-	}
-	public static void showLectionsAfterSort(ArrayList<Lection> abs) {
-		for(int i=0;i<abs.size();++i) {
-			System.out.println(abs.get(i).getName());
+	public static <T extends Abstract> void  showAfterSort(ArrayList<T> abs) {
+		for(Abstract a : abs) {
+			System.out.println(a.getName());
 		}
 	}
-	public static void showLectorsAfterSort(ArrayList<Lector> abs) {
-		for(int i=0;i<abs.size();++i) {
-			System.out.println(abs.get(i).getName());
-		}
-	}
-	public static ArrayList<Course> weedCourseByDateAfter (ArrayList<Course> courses, Date date) {
+	public static ArrayList<Course> weedCourseByDateAfter (ArrayList<Course> courses, String select) {
+		
 		ArrayList<Course> n = new ArrayList<Course>();
-		for(int i=0;i<courses.size();++i) {
-			Course term = courses.get(i);
-			if (term.getLections().get(0).getDate().after(date)) {
-				n.add(term);
+		switch(select) {
+		case("before"): {
+			for (Course c : courses) {
+				if (c.getLections().get(0).getDate().after(date)) {
+					n.add(c);
+				}
 			}
+		}
+		case ("after"): {
+			for (Course c : courses) {
+				if (c.getLections().get(0).getDate().after(new Date())) {
+					n.add(c);
+				}
+			}
+		}
 		}
 		return n;
 	}
