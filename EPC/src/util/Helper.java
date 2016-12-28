@@ -1,6 +1,7 @@
 package util;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 import sort.*;
 import model.*;
@@ -12,12 +13,15 @@ public class Helper {
 		{
 		case("start date"):{
 			courses.sort(new SortCourseByStartDate());
+			Utilites.showCoursesAfterSort(courses);
 		}
 		case("students count"):{
 			courses.sort(new SortCourseByStudentsCount());
+			Utilites.showCoursesAfterSort(courses);
 		}
 		case("alphabet"):{
 			courses.sort(new SortByName());
+			Utilites.showCoursesAfterSort(courses);
 		}
 		}
 	}
@@ -26,9 +30,11 @@ public class Helper {
 		{
 		case("alphabet"): {
 			lectors.sort(new SortByName());
+			Utilites.showLectorsAfterSort(lectors);
 		}
 		case("course count"): {
 			lectors.sort(new SortLectorByCourseCount());
+			Utilites.showLectorsAfterSort(lectors);
 		}
 		}		
 	}
@@ -44,10 +50,15 @@ public class Helper {
 		{
 		case ("alphabet"): {
 			lections.sort(new SortByName());
+			Utilites.showLectionsAfterSort(lections);
 		}
 		case ("date"): {
 			lections.sort(new SortLectionByDate());
+			Utilites.showLectionsAfterSort(lections);
 		}
 		}
+	}
+	public static void sortCourseAfterDate (ArrayList<Course> courses, Date date, String select) {
+		Helper.sortCourse(select, Utilites.weedCourseByDate(courses, date));
 	}
 }
