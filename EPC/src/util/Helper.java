@@ -59,6 +59,21 @@ public class Helper {
 		}
 	}
 	public static void sortCourseAfterDate (ArrayList<Course> courses, Date date, String select) {
-		Helper.sortCourse(select, Utilites.weedCourseByDate(courses, date));
+		Helper.sortCourse(select, Utilites.weedCourseByDateAfter(courses, date));
+	}
+	public static void sortCourseBeforeDate (ArrayList<Course> courses, String select) {
+		Helper.sortCourse(select, Utilites.weedCourseByDateBefore(courses));
+	}
+	public static void showAll (ArrayList<Course> c, ArrayList<Student> s, ArrayList<Lector> l) {
+		System.out.println("courses:"+c.size()+"/n"+
+				"lectors:"+l.size()+"/n"+"students:"+s.size());
+	}
+	public static void showLectionsByDate (ArrayList<Lection> lections, Date date) {
+		for(int i=0;i<lections.size();++i) {
+			Lection l = lections.get(i);
+			if (l.getDate().equals(date)) {
+				System.out.println(l.getName());
+			}
+		}
 	}
 }
