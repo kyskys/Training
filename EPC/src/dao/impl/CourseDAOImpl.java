@@ -27,10 +27,19 @@ public class CourseDAOImpl extends BaseDAOImpl<Course> implements CourseDAO {
 			}
 		}
 	}
+
 	/*
 	 * @Override public void showDescription(Long id) { Course course = get(id);
 	 * System.out.println("information:" + course.getInformationOfCourse() +
 	 * "\n" + "lector:" + course.getLector().getName() + "\n" + "students:"); //
 	 * TODO как вывести список студентов не использу€ импл студентов }
 	 */
+
+	@Override
+	public CourseDAOImpl getInstance() {
+		if (instance == null) {
+			return new CourseDAOImpl();
+		}
+			return (CourseDAOImpl) instance;
+	}
 }

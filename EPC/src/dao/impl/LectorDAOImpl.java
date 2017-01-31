@@ -25,4 +25,12 @@ public class LectorDAOImpl extends BaseDAOImpl<Lector> implements LectorDAO {
 			}
 		}
 	}
+
+	@Override
+	public LectorDAOImpl getInstance() {
+		if (instance==null) {
+			return new LectorDAOImpl();
+		}
+		return (LectorDAOImpl) instance;
+	}
 }

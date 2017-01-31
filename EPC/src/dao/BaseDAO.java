@@ -5,7 +5,7 @@ import java.util.List;
 import model.BaseModel;
 
 public interface BaseDAO <T extends BaseModel> {
-	T getInstance();
+	BaseDAO<T> getInstance();
 	boolean create(T entity);
 	boolean delete (T entity);
 	boolean update (T entity);

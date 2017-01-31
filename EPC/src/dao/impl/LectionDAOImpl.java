@@ -32,4 +32,12 @@ public class LectionDAOImpl extends BaseDAOImpl<Lection> implements LectionDAO {
 	 * getAll по дефолту? for (Lection lec : list) { if
 	 * (lec.getDate().equals(date)) System.out.println(lec.getName()); } }
 	 */
+
+	@Override
+	public LectionDAOImpl getInstance() {
+		if (instance==null) {
+			return new LectionDAOImpl();
+		}
+		return (LectionDAOImpl) instance;
+	}
 }

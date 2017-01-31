@@ -13,4 +13,12 @@ public class StudentDAOImpl extends BaseDAOImpl<Student> implements StudentDAO {
 		
 	}
 
+	@Override
+	public StudentDAOImpl getInstance() {
+		if (instance==null) {
+			return new StudentDAOImpl();
+		}
+		return (StudentDAOImpl) instance;
+	}
+
 }
