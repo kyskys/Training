@@ -11,5 +11,5 @@ public interface BaseDAO <T extends BaseModel> {
 	boolean update (T entity);
 	T get (Long id);
 	List<T> getAll();
-	void sort (List<T> list, SortParams params);
+	void sort (SortParams params);
 }

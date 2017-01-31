@@ -1,5 +1,9 @@
 package service;
 
+import java.util.Date;
+import java.util.List;
+
+import sort.DateType;
 import model.Course;
 
 public interface CourseService extends BaseService<Course> {
@@ -9,4 +13,5 @@ public interface CourseService extends BaseService<Course> {
 	void deleteLectorFromCourse(Long idLector, Long idCourse);
 	void addLectionToCourse(Long idLection, Long idCourse);
 	void deleteLectionFromCourse(Long idLection, Long idCourse);
+	List<Course> ListCourseWithDate (Date date, DateType dp);
 }

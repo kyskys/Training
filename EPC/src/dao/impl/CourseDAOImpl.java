@@ -1,7 +1,5 @@
 package dao.impl;
 
-import java.util.List;
-
 import sort.*;
 import dao.CourseDAO;
 import model.Course;
@@ -11,7 +9,7 @@ public class CourseDAOImpl extends BaseDAOImpl<Course> implements CourseDAO {
 	private static CourseDAOImpl instance;
 
 	@Override
-	public void sort(List<Course> list, SortParams params) {
+	public void sort(SortParams params) {
 		if (params != null) {
 			switch (params) {
 			case NAME: {

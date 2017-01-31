@@ -9,7 +9,7 @@ import model.BaseModel;
 public abstract class BaseDAOImpl<T extends BaseModel> implements BaseDAO<T> {
 	
 	private static Long id = (long) 0;
-	private List<T> list = new ArrayList<T>();
+	protected List<T> list = new ArrayList<T>();
 
 	@Override
 	public boolean create(T entity) {

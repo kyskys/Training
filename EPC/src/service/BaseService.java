@@ -12,5 +12,5 @@ public interface BaseService<T extends BaseModel> {
 	T get (Long id);
 	void sort(SortParams params);
 	List<T> getAll(SortParams params);
-
+	StringBuilder showAll();
 }

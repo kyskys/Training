@@ -1,5 +1,9 @@
 package service.impl;
 
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
 import dao.BaseDAO;
 import dao.CourseDAO;
 import dao.LectionDAO;
@@ -10,6 +14,7 @@ import dao.impl.LectionDAOImpl;
 import dao.impl.LectorDAOImpl;
 import dao.impl.StudentDAOImpl;
 import service.CourseService;
+import sort.DateType;
 import model.Course;
 import model.Lection;
 import model.Lector;
@@ -51,7 +56,7 @@ public class CourseServiceImpl extends BaseServiceImpl<Course> implements
 		lector.getCourses().add(course);
 		course.setLector(lector);
 	}
-	
+
 	@Override
 	public void deleteLectorFromCourse(Long idLector, Long idCourse) {
 		Lector lector = lectorDAO.get(idLector);
@@ -78,4 +83,28 @@ public class CourseServiceImpl extends BaseServiceImpl<Course> implements
 		course.getLections().remove(lection);
 	}
 
+	@Override
+	public List<Course> ListCourseWithDate(Date date, DateType dp) {
+		List<Course> l = new ArrayList<Course>();
+		if (dp != null) {
+			switch (dp) {
+			case BEFORE: {
+				for (Course c : courseDAO.getAll()) {
+					if (c.getLections().get(0).getDate().before(date)) {
+						l.add(c);
+					}
+				}
+			}
+			case AFTER: {
+				for (Course c : courseDAO.getAll()) {
+					if (c.getLections().get(0).getDate().after(date)) {
+						l.add(c);
+					}
+				}
+			}
+			}
+		}
+		return l;
+
+	}
 }

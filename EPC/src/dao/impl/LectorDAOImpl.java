@@ -1,7 +1,5 @@
 package dao.impl;
 
-import java.util.List;
-
 import sort.*;
 import dao.LectorDAO;
 import model.Lector;
@@ -11,7 +9,7 @@ public class LectorDAOImpl extends BaseDAOImpl<Lector> implements LectorDAO {
 	private static LectorDAOImpl instance;
 
 	@Override
-	public void sort(List<Lector> list, SortParams params) {
+	public void sort(SortParams params) {
 		if (params != null) {
 			switch (params) {
 			case NAME: {

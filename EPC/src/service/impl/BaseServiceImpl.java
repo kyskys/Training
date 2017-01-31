@@ -32,7 +32,7 @@ public abstract class BaseServiceImpl<T extends BaseModel> implements
 
 	@Override
 	public List<T> getAll(SortParams params) {
-		if (params==null) {
+		if (params != null) {
 			sort(params);
 		}
 		return getBaseDAO().getAll();
@@ -40,7 +40,16 @@ public abstract class BaseServiceImpl<T extends BaseModel> implements
 
 	@Override
 	public void sort(SortParams params) {
-		getBaseDAO().sort(getBaseDAO().getAll(), params);
+		getBaseDAO().sort(params);
+	}
+
+	@Override
+	public StringBuilder showAll() {
+		StringBuilder s = new StringBuilder();
+		for (BaseModel t : getBaseDAO().getAll()) {
+			s.append(t.getName()+" ");
+		}
+		return s;
 	}
 
 	protected abstract BaseDAO<T> getBaseDAO();
