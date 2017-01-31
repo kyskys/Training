@@ -1,10 +1,11 @@
 package model;
 import java.util.Date;
 
-public class Lection extends Abstract{
+public class Lection extends BaseModel{
 private Date date;
+private Course course;
 public Lection (String name, Date date){
-	super.setName(name);
+	setName(name);
 	setDate(date);
 }
 public Date getDate() {
@@ -12,5 +13,11 @@ public Date getDate() {
 }
 public void setDate(Date date) {
 	this.date = date;
+}
+public Course getCourse() {
+	return course;
+}
+public void setCourse(Course course) {
+	this.course = course;
 }
 }

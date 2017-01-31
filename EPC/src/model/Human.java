@@ -1,17 +1,13 @@
 package model;
 
-public abstract class Human extends Abstract{
-private Role role;
+public abstract class Human extends BaseModel{
 public Human (String name){
-	super.setName(name);
+	setName(name);
 }
-public Role getRole() {
-	return role;
-}
-public void setRole(Role role) {
-	this.role = role;
-}
+public abstract Role getRole();
+
 public enum Role {
 LECTOR, LISTENER;
 }
+
 }
