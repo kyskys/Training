@@ -1,5 +1,9 @@
 package service.impl;
 
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
 import dao.BaseDAO;
 import dao.CourseDAO;
 import dao.LectionDAO;
@@ -33,6 +37,17 @@ public class LectionServiceImpl extends BaseServiceImpl<Lection> implements
 		Course course = courseDAO.get(lection.getCourse().getId());
 		course.getLections().remove(lection);
 		lection.setCourse(null);
+	}
+
+	@Override
+	public List<Lection> ListLecionOnDate(Date date) {
+		List<Lection> list = new ArrayList<Lection>();
+		for (Lection l : lectionDAO.getAll()) {
+			if (l.getDate().compareTo(date) == 0) {
+				list.add(l);
+			}
+		}
+		return list;
 	}
 
 	

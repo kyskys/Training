@@ -13,4 +13,5 @@ public interface BaseService<T extends BaseModel> {
 	void sort(SortParams params);
 	List<T> getAll(SortParams params);
 	StringBuilder showAll();
+	int totalCount();
 }

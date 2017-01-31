@@ -47,9 +47,14 @@ public abstract class BaseServiceImpl<T extends BaseModel> implements
 	public StringBuilder showAll() {
 		StringBuilder s = new StringBuilder();
 		for (BaseModel t : getBaseDAO().getAll()) {
-			s.append(t.getName()+" ");
+			s.append(t.getName() + " ");
 		}
 		return s;
+	}
+
+	@Override
+	public int totalCount() {
+		return getBaseDAO().getAll().size();
 	}
 
 	protected abstract BaseDAO<T> getBaseDAO();
