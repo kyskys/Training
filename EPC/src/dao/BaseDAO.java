@@ -6,7 +6,6 @@ import sort.SortParams;
 import model.BaseModel;
 
 public interface BaseDAO <T extends BaseModel> {
-	BaseDAO<T> getInstance();
 	boolean create(T entity);
 	boolean delete (T entity);
 	boolean update (T entity);

@@ -7,6 +7,9 @@ import dao.CourseDAO;
 import model.Course;
 
 public class CourseDAOImpl extends BaseDAOImpl<Course> implements CourseDAO {
+
+	private static CourseDAOImpl instance;
+
 	@Override
 	public void sort(List<Course> list, SortParams params) {
 		if (params != null) {
@@ -35,11 +38,10 @@ public class CourseDAOImpl extends BaseDAOImpl<Course> implements CourseDAO {
 	 * TODO как вывести список студентов не использу€ импл студентов }
 	 */
 
-	@Override
-	public CourseDAOImpl getInstance() {
+	public static CourseDAOImpl getInstance() {
 		if (instance == null) {
 			return new CourseDAOImpl();
 		}
-			return (CourseDAOImpl) instance;
+		return instance;
 	}
 }

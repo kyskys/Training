@@ -7,7 +7,7 @@ import dao.BaseDAO;
 import model.BaseModel;
 
 public abstract class BaseDAOImpl<T extends BaseModel> implements BaseDAO<T> {
-	protected BaseDAOImpl<T> instance;
+	
 	private static Long id = (long) 0;
 	private List<T> list = new ArrayList<T>();
 

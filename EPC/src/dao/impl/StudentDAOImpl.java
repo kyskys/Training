@@ -8,17 +8,18 @@ import model.Student;
 
 public class StudentDAOImpl extends BaseDAOImpl<Student> implements StudentDAO {
 
-	@Override
-	public void sort(List<Student> list, SortParams params) {
-		
-	}
+	private static StudentDAOImpl instance;
 
 	@Override
-	public StudentDAOImpl getInstance() {
-		if (instance==null) {
+	public void sort(List<Student> list, SortParams params) {
+
+	}
+
+	public static StudentDAOImpl getInstance() {
+		if (instance == null) {
 			return new StudentDAOImpl();
 		}
-		return (StudentDAOImpl) instance;
+		return instance;
 	}
 
 }

@@ -8,6 +8,8 @@ import model.Lection;
 
 public class LectionDAOImpl extends BaseDAOImpl<Lection> implements LectionDAO {
 
+	private static LectionDAOImpl instance;
+
 	@Override
 	public void sort(List<Lection> list, SortParams params) {
 		if (params != null) {
@@ -24,8 +26,9 @@ public class LectionDAOImpl extends BaseDAOImpl<Lection> implements LectionDAO {
 				break;
 			}
 		}
-		
+
 	}
+
 	/*
 	 * @Override public void showLectionByDate(Date date) { List<Lection> list =
 	 * super.getAll(null); // можно ли здесь null использовать, //чтобы вызвать
@@ -33,11 +36,10 @@ public class LectionDAOImpl extends BaseDAOImpl<Lection> implements LectionDAO {
 	 * (lec.getDate().equals(date)) System.out.println(lec.getName()); } }
 	 */
 
-	@Override
-	public LectionDAOImpl getInstance() {
-		if (instance==null) {
+	public static LectionDAOImpl getInstance() {
+		if (instance == null) {
 			return new LectionDAOImpl();
 		}
-		return (LectionDAOImpl) instance;
+		return instance;
 	}
 }

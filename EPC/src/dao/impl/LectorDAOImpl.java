@@ -7,7 +7,9 @@ import dao.LectorDAO;
 import model.Lector;
 
 public class LectorDAOImpl extends BaseDAOImpl<Lector> implements LectorDAO {
-	
+
+	private static LectorDAOImpl instance;
+
 	@Override
 	public void sort(List<Lector> list, SortParams params) {
 		if (params != null) {
@@ -26,11 +28,10 @@ public class LectorDAOImpl extends BaseDAOImpl<Lector> implements LectorDAO {
 		}
 	}
 
-	@Override
-	public LectorDAOImpl getInstance() {
-		if (instance==null) {
+	public static LectorDAOImpl getInstance() {
+		if (instance == null) {
 			return new LectorDAOImpl();
 		}
-		return (LectorDAOImpl) instance;
+		return instance;
 	}
 }
