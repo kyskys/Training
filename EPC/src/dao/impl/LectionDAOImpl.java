@@ -9,7 +9,7 @@ import model.Lection;
 public class LectionDAOImpl extends BaseDAOImpl<Lection> implements LectionDAO {
 
 	@Override
-	protected void sort(List<Lection> list, SortParams params) {
+	public void sort(List<Lection> list, SortParams params) {
 		if (params != null) {
 			switch (params) {
 			case NAME: {

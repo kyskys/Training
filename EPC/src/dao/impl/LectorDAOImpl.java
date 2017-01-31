@@ -9,7 +9,7 @@ import model.Lector;
 public class LectorDAOImpl extends BaseDAOImpl<Lector> implements LectorDAO {
 	
 	@Override
-	protected void sort(List<Lector> list, SortParams params) {
+	public void sort(List<Lector> list, SortParams params) {
 		if (params != null) {
 			switch (params) {
 			case NAME: {

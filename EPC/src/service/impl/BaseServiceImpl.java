@@ -32,7 +32,15 @@ public abstract class BaseServiceImpl<T extends BaseModel> implements
 
 	@Override
 	public List<T> getAll(SortParams params) {
-		return getBaseDAO().getAll(params);
+		if (params==null) {
+			sort(params);
+		}
+		return getBaseDAO().getAll();
+	}
+
+	@Override
+	public void sort(SortParams params) {
+		getBaseDAO().sort(getBaseDAO().getAll(), params);
 	}
 
 	protected abstract BaseDAO<T> getBaseDAO();

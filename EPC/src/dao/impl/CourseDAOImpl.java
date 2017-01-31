@@ -8,7 +8,7 @@ import model.Course;
 
 public class CourseDAOImpl extends BaseDAOImpl<Course> implements CourseDAO {
 	@Override
-	protected void sort(List<Course> list, SortParams params) {
+	public void sort(List<Course> list, SortParams params) {
 		if (params != null) {
 			switch (params) {
 			case NAME: {

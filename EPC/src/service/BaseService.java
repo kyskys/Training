@@ -10,6 +10,7 @@ public interface BaseService<T extends BaseModel> {
 	boolean delete (T entity);
 	boolean update (T entity);
 	T get (Long id);
+	void sort(SortParams params);
 	List<T> getAll(SortParams params);
 
 }

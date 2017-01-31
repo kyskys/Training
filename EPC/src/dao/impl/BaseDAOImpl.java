@@ -3,7 +3,6 @@ package dao.impl;
 import java.util.ArrayList;
 import java.util.List;
 
-import sort.SortParams;
 import dao.BaseDAO;
 import model.BaseModel;
 
@@ -42,6 +41,4 @@ public abstract class BaseDAOImpl<T extends BaseModel> implements BaseDAO<T> {
 	public List<T> getAll() {
 		return list;
 	}
-
-	protected abstract void sort(List<T> list, SortParams params);
 }

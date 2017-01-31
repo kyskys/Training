@@ -9,7 +9,7 @@ import model.Student;
 public class StudentDAOImpl extends BaseDAOImpl<Student> implements StudentDAO {
 
 	@Override
-	protected void sort(List<Student> list, SortParams params) {
+	public void sort(List<Student> list, SortParams params) {
 		
 	}
 
