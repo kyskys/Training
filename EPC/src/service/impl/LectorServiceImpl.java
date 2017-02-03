@@ -1,5 +1,7 @@
 package service.impl;
 
+import java.util.List;
+
 import dao.BaseDAO;
 import dao.CourseDAO;
 import dao.LectorDAO;
@@ -39,7 +41,7 @@ public class LectorServiceImpl extends BaseServiceImpl<Lector> implements
 	}
 
 	@Override
-	public void sort(SortParams params) {
+	public void sort(SortParams params, List<Lector> list) {
 		if (params != null) {
 			switch (params) {
 			case NAME: {

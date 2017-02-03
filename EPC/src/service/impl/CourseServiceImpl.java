@@ -109,7 +109,7 @@ public class CourseServiceImpl extends BaseServiceImpl<Course> implements
 	}
 
 	@Override
-	public void sort(SortParams params) {
+	public void sort(SortParams params, List<Course> list) {
 		if (params != null) {
 			switch (params) {
 			case NAME: {

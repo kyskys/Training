@@ -1,5 +1,7 @@
 package util;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.InputMismatchException;
 import java.util.NoSuchElementException;
@@ -12,7 +14,7 @@ public class ConsoleReader {
 			NoSuchElementException {
 		Integer i;
 		try {
-			System.out.println("vvedite cifry:");
+			System.out.println("vvedite chislo:");
 			i = Integer.valueOf(in.nextLine());
 		} catch (NumberFormatException e) {
 			System.out.println("neverniy vvod, povtorie vvod");
@@ -40,14 +42,16 @@ public class ConsoleReader {
 	public Date readDateByConsole() {
 		Date d = null;
 		try {
-			System.out.println("vvedite daty (dd/mm/yy:"); //как сделать ввод строки я не знаю
-			in.
-			
+			System.out.println("vvedite daty (dd.mm.yyyy:"); 
+			String s = in.nextLine();
+			SimpleDateFormat f = new SimpleDateFormat("dd.MM.yyyy");
+			d = f.parse(s);
+
 		} catch (InputMismatchException e) {
 			System.out.println("neverniy vvod, povtorie vvod");
 			return readDateByConsole();
-		} catch (NoSuchElementException e) {
-			System.out.println("pystaya stroka, povtorite vvod");
+		} catch (ParseException e) {
+			System.out.println("owibka formata, povtorite vvod");
 			return readDateByConsole();
 		}
 		return d;

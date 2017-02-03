@@ -11,8 +11,6 @@ import sort.SortParams;
 public abstract class BaseServiceImpl<T extends BaseModel> implements
 		BaseService<T> {
 
-	protected List<T> list = new ArrayList<T>();
-
 	@Override
 	public boolean create(T entity) {
 		return getBaseDAO().create(entity);
@@ -35,10 +33,11 @@ public abstract class BaseServiceImpl<T extends BaseModel> implements
 
 	@Override
 	public List<T> getAll(SortParams params) {
+		List<T> list = getBaseDAO().getAll();
 		if (params != null) {
-			sort(params);
+			sort(params, list);
 		}
-		return getBaseDAO().getAll();
+		return list;
 	}
 
 	@Override
@@ -57,6 +56,6 @@ public abstract class BaseServiceImpl<T extends BaseModel> implements
 
 	protected abstract BaseDAO<T> getBaseDAO();
 
-	protected abstract void sort(SortParams params);
+	protected abstract void sort(SortParams params, List<T> list);
 
 }

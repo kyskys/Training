@@ -1,5 +1,7 @@
 package service.impl;
 
+import java.util.List;
+
 import dao.BaseDAO;
 import dao.CourseDAO;
 import dao.StudentDAO;
@@ -39,7 +41,7 @@ public class StudentServiceImpl extends BaseServiceImpl<Student> implements
 	}
 
 	@Override
-	public void sort(SortParams params) {
+	public void sort(SortParams params, List<Student> list) {
 
 	}
 }

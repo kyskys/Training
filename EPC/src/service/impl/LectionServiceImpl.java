@@ -54,7 +54,7 @@ public class LectionServiceImpl extends BaseServiceImpl<Lection> implements
 	}
 
 	@Override
-	public void sort(SortParams params) {
+	public void sort(SortParams params, List<Lection> list) {
 		if (params != null) {
 			switch (params) {
 			case NAME: {
