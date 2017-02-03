@@ -8,13 +8,13 @@ import java.util.Scanner;
 public class ConsoleReader {
 	private Scanner in = new Scanner(System.in);
 
-	public Long readIntByConsole() throws InputMismatchException,
+	public Integer readIntByConsole() throws InputMismatchException,
 			NoSuchElementException {
-		Long i;
+		Integer i;
 		try {
 			System.out.println("vvedite cifry:");
-			i = in.nextLong();
-		} catch (InputMismatchException e) {
+			i = Integer.valueOf(in.nextLine());
+		} catch (NumberFormatException e) {
 			System.out.println("neverniy vvod, povtorie vvod");
 			return readIntByConsole();
 		} catch (NoSuchElementException e) {
@@ -29,7 +29,7 @@ public class ConsoleReader {
 		StringBuilder s = new StringBuilder();
 		try {
 			System.out.println("vvedite frazy:");
-			s.append(in.next());
+			s.append(in.nextLine());
 		} catch (NoSuchElementException e) {
 			System.out.println("pystaya stroka, povtorite vvod");
 			return readStringByConsole();
@@ -40,7 +40,9 @@ public class ConsoleReader {
 	public Date readDateByConsole() {
 		Date d = null;
 		try {
-			System.out.println("vvedite daty (dd/mm/yy:");
+			System.out.println("vvedite daty (dd/mm/yy:"); //как сделать ввод строки я не знаю
+			in.
+			
 		} catch (InputMismatchException e) {
 			System.out.println("neverniy vvod, povtorie vvod");
 			return readDateByConsole();
