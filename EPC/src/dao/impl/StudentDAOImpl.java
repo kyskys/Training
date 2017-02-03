@@ -1,6 +1,5 @@
 package dao.impl;
 
-import sort.SortParams;
 import dao.StudentDAO;
 import model.Student;
 
@@ -8,9 +7,7 @@ public class StudentDAOImpl extends BaseDAOImpl<Student> implements StudentDAO {
 
 	private static StudentDAOImpl instance;
 
-	@Override
-	public void sort(SortParams params) {
-
+	private StudentDAOImpl() {
 	}
 
 	public static StudentDAOImpl getInstance() {

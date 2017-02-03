@@ -15,6 +15,10 @@ import dao.impl.LectorDAOImpl;
 import dao.impl.StudentDAOImpl;
 import service.CourseService;
 import sort.DateType;
+import sort.SortByName;
+import sort.SortCourseByStartDate;
+import sort.SortCourseByStudentsCount;
+import sort.SortParams;
 import model.Course;
 import model.Lection;
 import model.Lector;
@@ -22,7 +26,6 @@ import model.Student;
 
 public class CourseServiceImpl extends BaseServiceImpl<Course> implements
 		CourseService {
-	// TODO все методы умеют только возвращать (строку), а не писать в консоль
 	private CourseDAO courseDAO = CourseDAOImpl.getInstance();
 	private StudentDAO studentDAO = StudentDAOImpl.getInstance();
 	private LectorDAO lectorDAO = LectorDAOImpl.getInstance();
@@ -60,9 +63,7 @@ public class CourseServiceImpl extends BaseServiceImpl<Course> implements
 	@Override
 	public void deleteLectorFromCourse(Long idLector, Long idCourse) {
 		Lector lector = lectorDAO.get(idLector);
-		Course course = courseDAO.get(idCourse); // вот здесь я делаю удаление
-													// студента у курса,
-													// правильно ли?
+		Course course = courseDAO.get(idCourse); 
 		course.getLections().remove(lector);
 		lector.getCourses().remove(course);
 	}
@@ -105,6 +106,26 @@ public class CourseServiceImpl extends BaseServiceImpl<Course> implements
 			}
 		}
 		return l;
+	}
 
+	@Override
+	public void sort(SortParams params) {
+		if (params != null) {
+			switch (params) {
+			case NAME: {
+				list.sort(new SortByName());
+				break;
+			}
+			case STUDENTS_COUNT: {
+				list.sort(new SortCourseByStudentsCount());
+				break;
+			}
+			case DATE: {
+				list.sort(new SortCourseByStartDate());
+			}
+			default:
+				break;
+			}
+		}
 	}
 }

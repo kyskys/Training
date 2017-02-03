@@ -2,7 +2,6 @@ package dao;
 
 import java.util.List;
 
-import sort.SortParams;
 import model.BaseModel;
 
 public interface BaseDAO <T extends BaseModel> {
@@ -11,5 +10,4 @@ public interface BaseDAO <T extends BaseModel> {
 	boolean update (T entity);
 	T get (Long id);
 	List<T> getAll();
-	void sort (SortParams params);
 }

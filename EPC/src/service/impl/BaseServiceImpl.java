@@ -1,5 +1,6 @@
 package service.impl;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import dao.BaseDAO;
@@ -9,6 +10,8 @@ import sort.SortParams;
 
 public abstract class BaseServiceImpl<T extends BaseModel> implements
 		BaseService<T> {
+
+	protected List<T> list = new ArrayList<T>();
 
 	@Override
 	public boolean create(T entity) {
@@ -39,12 +42,7 @@ public abstract class BaseServiceImpl<T extends BaseModel> implements
 	}
 
 	@Override
-	public void sort(SortParams params) {
-		getBaseDAO().sort(params);
-	}
-
-	@Override
-	public StringBuilder showAll() {
+	public StringBuilder getNameAsString() {
 		StringBuilder s = new StringBuilder();
 		for (BaseModel t : getBaseDAO().getAll()) {
 			s.append(t.getName() + " ");
@@ -58,5 +56,7 @@ public abstract class BaseServiceImpl<T extends BaseModel> implements
 	}
 
 	protected abstract BaseDAO<T> getBaseDAO();
+
+	protected abstract void sort(SortParams params);
 
 }

@@ -10,13 +10,16 @@ import dao.LectionDAO;
 import dao.impl.CourseDAOImpl;
 import dao.impl.LectionDAOImpl;
 import service.LectionService;
+import sort.SortByName;
+import sort.SortLectionByDate;
+import sort.SortParams;
 import model.Course;
 import model.Lection;
 
 public class LectionServiceImpl extends BaseServiceImpl<Lection> implements
 		LectionService {
-	private CourseDAO courseDAO = new CourseDAOImpl();
-	private LectionDAO lectionDAO = new LectionDAOImpl();
+	private CourseDAO courseDAO = CourseDAOImpl.getInstance();
+	private LectionDAO lectionDAO = LectionDAOImpl.getInstance();
 
 	@Override
 	protected BaseDAO<Lection> getBaseDAO() {
@@ -50,5 +53,21 @@ public class LectionServiceImpl extends BaseServiceImpl<Lection> implements
 		return list;
 	}
 
-	
+	@Override
+	public void sort(SortParams params) {
+		if (params != null) {
+			switch (params) {
+			case NAME: {
+				list.sort(new SortByName());
+				break;
+			}
+			case DATE: {
+				list.sort(new SortLectionByDate());
+				break;
+			}
+			default:
+				break;
+			}
+		}
+	}
 }
