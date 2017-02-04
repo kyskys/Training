@@ -39,7 +39,7 @@ public abstract class BaseServiceImpl<T extends BaseModel> implements
 	}
 
 	@Override
-	public StringBuilder getNameAsString() {
+	public StringBuilder getAllAsString() {
 		StringBuilder s = new StringBuilder();
 		for (BaseModel t : getBaseDAO().getAll()) {
 			s.append(t.getName() + " ");

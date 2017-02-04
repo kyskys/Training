@@ -5,8 +5,7 @@ import java.util.List;
 import dao.BaseDAO;
 import dao.CourseDAO;
 import dao.StudentDAO;
-import dao.impl.CourseDAOImpl;
-import dao.impl.StudentDAOImpl;
+import resourses.DependencyManager;
 import service.StudentService;
 import sort.SortParams;
 import model.Course;
@@ -14,8 +13,10 @@ import model.Student;
 
 public class StudentServiceImpl extends BaseServiceImpl<Student> implements
 		StudentService {
-	private CourseDAO courseDAO = CourseDAOImpl.getInstance();
-	private StudentDAO studentDAO = StudentDAOImpl.getInstance();
+	private CourseDAO courseDAO = DependencyManager
+			.getInstance(CourseDAO.class);
+	private StudentDAO studentDAO = DependencyManager
+			.getInstance(StudentDAO.class);
 
 	@Override
 	protected BaseDAO<Student> getBaseDAO() {

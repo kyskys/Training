@@ -9,11 +9,7 @@ import dao.CourseDAO;
 import dao.LectionDAO;
 import dao.LectorDAO;
 import dao.StudentDAO;
-import dao.impl.CourseDAOImpl;
-import dao.impl.LectionDAOImpl;
-import dao.impl.LectorDAOImpl;
-import dao.impl.StudentDAOImpl;
-import resourses.ConfigReader;
+import resourses.DependencyManager;
 import service.CourseService;
 import sort.DateType;
 import sort.SortByName;
@@ -27,10 +23,14 @@ import model.Student;
 
 public class CourseServiceImpl extends BaseServiceImpl<Course> implements
 		CourseService {
-	private CourseDAO courseDAO =(CourseDAO) ConfigReader.getDAO("dao.CourseDAO");
-	private StudentDAO studentDAO = StudentDAOImpl.getInstance();
-	private LectorDAO lectorDAO = LectorDAOImpl.getInstance();
-	private LectionDAO lectionDAO = LectionDAOImpl.getInstance();
+	private CourseDAO courseDAO = DependencyManager
+			.getInstance(CourseDAO.class);
+	private StudentDAO studentDAO = DependencyManager
+			.getInstance(StudentDAO.class);
+	private LectorDAO lectorDAO = DependencyManager
+			.getInstance(LectorDAO.class);
+	private LectionDAO lectionDAO = DependencyManager
+			.getInstance(LectionDAO.class);
 
 	@Override
 	protected BaseDAO<Course> getBaseDAO() {
@@ -64,7 +64,7 @@ public class CourseServiceImpl extends BaseServiceImpl<Course> implements
 	@Override
 	public void deleteLectorFromCourse(Long idLector, Long idCourse) {
 		Lector lector = lectorDAO.get(idLector);
-		Course course = courseDAO.get(idCourse); 
+		Course course = courseDAO.get(idCourse);
 		course.getLections().remove(lector);
 		lector.getCourses().remove(course);
 	}

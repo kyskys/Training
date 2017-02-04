@@ -11,6 +11,6 @@ public interface BaseService<T extends BaseModel> {
 	boolean update (T entity);
 	T get (Long id);
 	List<T> getAll(SortParams params);
-	StringBuilder getNameAsString();
+	StringBuilder getAllAsString();
 	int totalCount();
 }

@@ -7,8 +7,7 @@ import java.util.List;
 import dao.BaseDAO;
 import dao.CourseDAO;
 import dao.LectionDAO;
-import dao.impl.CourseDAOImpl;
-import dao.impl.LectionDAOImpl;
+import resourses.DependencyManager;
 import service.LectionService;
 import sort.SortByName;
 import sort.SortLectionByDate;
@@ -18,8 +17,10 @@ import model.Lection;
 
 public class LectionServiceImpl extends BaseServiceImpl<Lection> implements
 		LectionService {
-	private CourseDAO courseDAO = CourseDAOImpl.getInstance();
-	private LectionDAO lectionDAO = LectionDAOImpl.getInstance();
+	private CourseDAO courseDAO = DependencyManager
+			.getInstance(CourseDAO.class);
+	private LectionDAO lectionDAO = DependencyManager
+			.getInstance(LectionDAO.class);
 
 	@Override
 	protected BaseDAO<Lection> getBaseDAO() {
@@ -43,7 +44,7 @@ public class LectionServiceImpl extends BaseServiceImpl<Lection> implements
 	}
 
 	@Override
-	public List<Lection> ListLecionOnDate(Date date) {
+	public List<Lection> ListLectionOnDate(Date date) {
 		List<Lection> list = new ArrayList<Lection>();
 		for (Lection l : lectionDAO.getAll()) {
 			if (l.getDate().compareTo(date) == 0) {

@@ -1,18 +1,15 @@
 package test;
 
-import java.sql.Date;
-import java.util.ArrayList;
-
-import dao.impl.LectorDAOImpl;
-import model.Course;
-import model.Lection;
-import model.Lector;
-import model.Student;
+import dao.*;
+import service.*;
+import model.*;
+import resourses.DependencyManager;
 
 public class Test {
 
-	public static void main(String[] args) throws InstantiationException, IllegalAccessException {
-		
-	
+	public static void main(String[] args) {
+	CourseService cs = DependencyManager.getInstance(CourseService.class);
+	cs.create(new Course());
+	System.out.println(cs.get((long)0).getName());
 	}
 }

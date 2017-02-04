@@ -5,8 +5,7 @@ import java.util.List;
 import dao.BaseDAO;
 import dao.CourseDAO;
 import dao.LectorDAO;
-import dao.impl.CourseDAOImpl;
-import dao.impl.LectorDAOImpl;
+import resourses.DependencyManager;
 import service.LectorService;
 import sort.SortByName;
 import sort.SortLectorByCourseCount;
@@ -16,8 +15,10 @@ import model.Lector;
 
 public class LectorServiceImpl extends BaseServiceImpl<Lector> implements
 		LectorService {
-	private CourseDAO courseDAO = CourseDAOImpl.getInstance();
-	private LectorDAO lectorDAO = LectorDAOImpl.getInstance();
+	private CourseDAO courseDAO = DependencyManager
+			.getInstance(CourseDAO.class);
+	private LectorDAO lectorDAO = DependencyManager
+			.getInstance(LectorDAO.class);
 
 	@Override
 	protected BaseDAO<Lector> getBaseDAO() {
