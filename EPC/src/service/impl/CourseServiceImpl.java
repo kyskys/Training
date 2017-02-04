@@ -13,6 +13,7 @@ import dao.impl.CourseDAOImpl;
 import dao.impl.LectionDAOImpl;
 import dao.impl.LectorDAOImpl;
 import dao.impl.StudentDAOImpl;
+import resourses.ConfigReader;
 import service.CourseService;
 import sort.DateType;
 import sort.SortByName;
@@ -26,7 +27,7 @@ import model.Student;
 
 public class CourseServiceImpl extends BaseServiceImpl<Course> implements
 		CourseService {
-	private CourseDAO courseDAO = getConfig().getProperty("dao.CourseDAO");
+	private CourseDAO courseDAO =(CourseDAO) ConfigReader.getDAO("dao.CourseDAO");
 	private StudentDAO studentDAO = StudentDAOImpl.getInstance();
 	private LectorDAO lectorDAO = LectorDAOImpl.getInstance();
 	private LectionDAO lectionDAO = LectionDAOImpl.getInstance();
