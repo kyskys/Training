@@ -14,6 +14,10 @@ public class Course extends BaseModel {
 		informationOfCourse = information;
 	}
 
+	public Course() {
+
+	}
+
 	public Lector getLector() {
 		return lector;
 	}

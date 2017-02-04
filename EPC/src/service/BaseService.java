@@ -1,6 +1,7 @@
 package service;
 
 import java.util.List;
+import java.util.Properties;
 
 import model.BaseModel;
 import sort.SortParams;
@@ -13,4 +14,5 @@ public interface BaseService<T extends BaseModel> {
 	List<T> getAll(SortParams params);
 	StringBuilder getNameAsString();
 	int totalCount();
+	Properties getConfig();
 }

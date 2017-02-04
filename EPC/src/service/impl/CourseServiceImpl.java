@@ -26,7 +26,7 @@ import model.Student;
 
 public class CourseServiceImpl extends BaseServiceImpl<Course> implements
 		CourseService {
-	private CourseDAO courseDAO = CourseDAOImpl.getInstance();
+	private CourseDAO courseDAO = getConfig().getProperty("dao.CourseDAO");
 	private StudentDAO studentDAO = StudentDAOImpl.getInstance();
 	private LectorDAO lectorDAO = LectorDAOImpl.getInstance();
 	private LectionDAO lectionDAO = LectionDAOImpl.getInstance();
