@@ -1,5 +1,5 @@
 package menu;
 
-public abstract class Action {
-	public abstract void navigation();
+public interface Action {
+	public void doAction();
 }
