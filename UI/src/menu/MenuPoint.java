@@ -12,14 +12,14 @@ public class MenuPoint implements Action {
 
 	public Menu doWork(){
 		if(act!=null) {
-			//если есть действие - че то дергаем
+			//esli est deistvie - dergaem
 		}
 		return null;
-		//не знаю как вернуть другое меню, мб по ссылке?
+		//ne znau kak vernut drygoe menu, bk ssilky gde to prinimat?
 	}
 
 	@Override
 	public void doAction() {
-		//act=чему либо, чтобы заполнить поле, заодно создаем действие
+		//act=chety libo, zapolnyaem pole, sozdaem deistvie
 	}
 }
