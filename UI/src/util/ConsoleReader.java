@@ -8,9 +8,9 @@ import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 public class ConsoleReader {
-	private Scanner in = new Scanner(System.in);
+	private static Scanner in = new Scanner(System.in);
 
-	public Integer readIntByConsole() throws InputMismatchException,
+	public static Integer readIntByConsole() throws InputMismatchException,
 			NoSuchElementException {
 		Integer i;
 		try {
@@ -27,7 +27,7 @@ public class ConsoleReader {
 
 	}
 
-	public StringBuilder readStringByConsole() {
+	public static StringBuilder readStringByConsole() {
 		StringBuilder s = new StringBuilder();
 		try {
 			System.out.println("vvedite frazy:");
@@ -39,7 +39,7 @@ public class ConsoleReader {
 		return s;
 	}
 
-	public Date readDateByConsole() {
+	public static Date readDateByConsole() {
 		Date d = null;
 		try {
 			System.out.println("vvedite daty (dd.mm.yyyy:"); 
