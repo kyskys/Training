@@ -39,10 +39,11 @@ public abstract class BaseServiceImpl<T extends BaseModel> implements
 	}
 
 	@Override
-	public StringBuilder getAllAsString() {
-		StringBuilder s = new StringBuilder();
-		for (BaseModel t : getBaseDAO().getAll()) {
-			s.append(t.getName() + " ");
+	public String getAllAsString() {
+		String s = null;
+		List<T> list = getBaseDAO().getAll();
+		for (int i = 0; i < list.size(); i++) {
+			s += i + ". " + list.get(i) + "\n";
 		}
 		return s;
 	}

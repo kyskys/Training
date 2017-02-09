@@ -27,16 +27,14 @@ public class ConsoleReader {
 
 	}
 
-	public static StringBuilder readStringByConsole() {
-		StringBuilder s = new StringBuilder();
+	public static String readStringByConsole() {
 		try {
 			System.out.println("vvedite frazy:");
-			s.append(in.nextLine());
+			return in.nextLine();
 		} catch (NoSuchElementException e) {
 			System.out.println("pystaya stroka, povtorite vvod");
 			return readStringByConsole();
 		}
-		return s;
 	}
 
 	public static Date readDateByConsole() {

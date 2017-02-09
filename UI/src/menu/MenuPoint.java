@@ -4,20 +4,32 @@ import action.Action;
 
 public class MenuPoint {
 	private Action act;
+	private Menu menu;
+	private String title;
 
-	public MenuPoint() {
+	public MenuPoint(Menu menu, String title) {
+		this(menu,title,null);
 	}
 
-	public MenuPoint(Action act) {
-		this.act = act;
+	public MenuPoint(Menu menu, String title, Action act) {
+		this.act=act;
+		this.title=title;
+		this.menu=menu;
 	}
 
 	public Menu doWork() {
-		if (!act.doAction()) {
-			// esli est deistvie - dergaem
+		if (this.act!=null) {
+			act.doAction();
 		}
-		return null;
-		// ne znau kak vernut drygoe menu, bk ssilky gde to prinimat?
+		return menu;
+	}
+
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
 	}
 
 }
