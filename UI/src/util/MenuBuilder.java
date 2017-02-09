@@ -8,8 +8,8 @@ public class MenuBuilder {
 		Menu mainMenu = new Menu("glavnoe menu");
 		Menu bd = new Menu("rabota s bd");
 		Menu show = new Menu("vivod informacii");
-		mainMenu.Add(new MenuPoint(bd, "menu 1"));
-		mainMenu.Add(new MenuPoint(show, "menu 2"));
+		mainMenu.Add(new MenuPoint(bd, "rabota s bd"));
+		mainMenu.Add(new MenuPoint(show, "vivod informacii"));
 		mainMenu.Add(new MenuPoint(null, "vihod"));
 		Menu courseServ = new Menu("menu raboti s kyrsami");
 		courseServ.Add(new MenuPoint(mainMenu, "sozdat kyrs", null));
@@ -33,13 +33,32 @@ public class MenuBuilder {
 		lectionServ.Add(new MenuPoint(mainMenu, "dobavit daty k lekcii", null));
 		lectionServ.Add(new MenuPoint(mainMenu, "ydalit daty y lekcii", null));
 		Menu studentServ = new Menu("menu raboti s studentami");
+		lectionServ.Add(new MenuPoint(mainMenu, "sozdat stydenta", null));
+		lectionServ.Add(new MenuPoint(mainMenu, "ydalit stydenta", null));
+		lectionServ.Add(new MenuPoint(mainMenu, "dobavit kyrs y stydenta", null));
+		lectionServ.Add(new MenuPoint(mainMenu, "ydalit kyrs y stydenta", null));
 		bd.Add(new MenuPoint(courseServ, "ypravlenie kyrsami"));
 		bd.Add(new MenuPoint(lectorServ, "ypravlenie lektorami"));
 		bd.Add(new MenuPoint(lectionServ, "ypravlenie lekciyami"));
 		bd.Add(new MenuPoint(studentServ, "ypravlenie studentami"));
 		bd.Add(new MenuPoint(mainMenu, "na glavnoe menu"));
+		Menu courseInfo = new Menu("informaciya o kyrse");
+		courseInfo.Add(new MenuPoint(mainMenu,"sortirovat po date nachala",null));
+		courseInfo.Add(new MenuPoint(mainMenu,"sortirovat po kolichestvy stydentov",null));
+		courseInfo.Add(new MenuPoint(mainMenu,"sortirovat po lektory",null));
+		courseInfo.Add(new MenuPoint(mainMenu,"sortirovat po alfavity",null));
+		courseInfo.Add(new MenuPoint(mainMenu,"spisok kyrsov posle dati",null));
+		courseInfo.Add(new MenuPoint(mainMenu,"spisok kyrsov kotorie yje idyt",null));
+		Menu lectorInfo = new Menu("informaciya o lektorah");
+		courseInfo.Add(new MenuPoint(mainMenu,"sortirovat po alfavity",null));
+		courseInfo.Add(new MenuPoint(mainMenu,"sortirovat po kolichestvy kyrsov",null));
+		Menu lectionInfo = new Menu("informaciya o lekciyah");
+		courseInfo.Add(new MenuPoint(mainMenu,"sortirovat po alfavity",null));
+		courseInfo.Add(new MenuPoint(mainMenu,"sortirovat po date",null));
+		courseInfo.Add(new MenuPoint(mainMenu,"spisok lekcii na daty",null));
+		Menu studentInfo = new Menu("informaciya o stydentah");
 		
-		show.Add(new MenuPoint(mainMenu, "nazad"));
+		show.Add(new MenuPoint(mainMenu, "na glavnoe menu"));
 		return mainMenu;
 	}
 
