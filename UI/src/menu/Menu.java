@@ -1,9 +1,10 @@
 package menu;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Menu {
-	private List<MenuPoint> list;
+	private List<MenuPoint> list = new ArrayList<MenuPoint>();
 	private String title;
 
 	public Menu(String title) {
@@ -34,8 +35,8 @@ public class Menu {
 		System.out.println(getTitle());
 		for (int i = 0; i < getList().size(); i++) {
 			MenuPoint m = getList().get(i);
-			System.out.println(i + "." + m.getTitle());
-			System.out.println("chto jelaete, gospodin?");
+			System.out.println(i + 1 + "." + m.getTitle());
 		}
+		System.out.println("chto jelaete, gospodin?");
 	}
 }
