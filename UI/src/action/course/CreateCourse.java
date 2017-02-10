@@ -13,7 +13,10 @@ public class CreateCourse implements Action {
 		Course c = new Course();
 		System.out.println("vvedite nazvanie kyrsa:");
 		String name = ConsoleReader.readStringByConsole();
+		System.out.println("vvedite informaciu o kyrse:");
+		String info = ConsoleReader.readStringByConsole();
 		c.setName(name);
+		c.setInformationOfCourse(info);
 		cs.create(c);
 	}
 }

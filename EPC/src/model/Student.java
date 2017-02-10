@@ -3,10 +3,6 @@ package model;
 public class Student extends Human {
 	private Course course;
 
-	public Student(String fio) {
-		super(fio);
-	}
-
 	@Override
 	public Role getRole() {
 		return Role.LISTENER;

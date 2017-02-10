@@ -9,15 +9,6 @@ public class Course extends BaseModel {
 	private ArrayList<Student> students;
 	private Lector lector;
 
-	public Course(String name, String information) {
-		setName(name);
-		informationOfCourse = information;
-	}
-
-	public Course() {
-
-	}
-
 	public Lector getLector() {
 		return lector;
 	}
