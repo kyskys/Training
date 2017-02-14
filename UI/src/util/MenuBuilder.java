@@ -1,5 +1,6 @@
 package util;
 
+import action.TotalCount;
 import action.course.CreateCourse;
 import action.course.DeleteCourse;
 import action.lection.CreateLection;
@@ -67,7 +68,7 @@ public class MenuBuilder {
 		show.Add(new MenuPoint(courseInfo, "pokazat infy o kyrse"));
 		show.Add(new MenuPoint(lectorInfo, "pokazat infy o lektorah"));
 		show.Add(new MenuPoint(lectionInfo, "pokazat infy o lekciyah"));
-		show.Add(new MenuPoint(mainMenu, "obwee chislo kyrsov, studentov, lektorov",null));
+		show.Add(new MenuPoint(mainMenu, "total count of courses, lectors, lections, students", new TotalCount()));
 		show.Add(new MenuPoint(mainMenu, "na glavnoe menu"));
 		return mainMenu;
 	}

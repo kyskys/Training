@@ -18,7 +18,6 @@ public abstract class BaseServiceImpl<T extends BaseModel> implements
 	public boolean delete(T entity) {
 		return getBaseDAO().delete(entity);
 	}
-
 	@Override
 	public boolean update(T entity) {
 		return getBaseDAO().update(entity);

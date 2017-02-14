@@ -19,8 +19,8 @@ public class SerializeUtil {
 			ClassNotFoundException {
 		FileInputStream fis = new FileInputStream(fileName);
 		ObjectInputStream ois = new ObjectInputStream(fis);
+		Object obj = ois.readObject();
 		ois.close();
-		return ois.readObject();
-
+		return obj;
 	}
 }
