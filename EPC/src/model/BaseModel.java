@@ -1,6 +1,9 @@
 package model;
 
-public class BaseModel {
+import java.io.Serializable;
+
+public class BaseModel implements Serializable{
+
 	protected String name;
 	private Long id;
 

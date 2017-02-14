@@ -14,7 +14,6 @@ public class ConsoleReader {
 			NoSuchElementException {
 		Integer i;
 		try {
-			System.out.println("vvedite chislo:");
 			i = Integer.valueOf(in.nextLine());
 		} catch (NumberFormatException e) {
 			System.out.println("neverniy vvod, povtorie vvod");
@@ -29,7 +28,6 @@ public class ConsoleReader {
 
 	public static String readStringByConsole() {
 		try {
-			System.out.println("vvedite frazy:");
 			return in.nextLine();
 		} catch (NoSuchElementException e) {
 			System.out.println("pystaya stroka, povtorite vvod");

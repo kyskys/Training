@@ -1,6 +1,5 @@
 package dao.impl;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import dao.BaseDAO;
@@ -8,12 +7,12 @@ import model.BaseModel;
 
 public abstract class BaseDAOImpl<T extends BaseModel> implements BaseDAO<T> {
 	
-	private static Long id = (long) 0;
-	protected List<T> list = new ArrayList<T>();
+	private static Long id;
+	protected List<T> list;//take link from StorageDAO
 
 	@Override
 	public boolean create(T entity) {
-		entity.setId(++id);
+		//TODO set id from StorageDAO
 		return list.add(entity);
 	}
 
