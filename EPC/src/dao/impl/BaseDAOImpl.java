@@ -2,17 +2,18 @@ package dao.impl;
 
 import java.util.List;
 
+import storage.StorageDAO;
 import dao.BaseDAO;
 import model.BaseModel;
 
 public abstract class BaseDAOImpl<T extends BaseModel> implements BaseDAO<T> {
 	
 	private static Long id;
-	protected List<T> list;//take link from StorageDAO
+	protected List<T> list;
 
 	@Override
 	public boolean create(T entity) {
-		//TODO set id from StorageDAO
+		id = StorageDAO.setId();
 		return list.add(entity);
 	}
 
