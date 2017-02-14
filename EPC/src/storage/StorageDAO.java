@@ -9,18 +9,20 @@ import model.*;
 @SuppressWarnings("unchecked")
 public class StorageDAO {
 	private static long id;
-	private static List<Object> list;
-	private static List<Course> courseService = (List<Course>) list.get(0);
-	private static List<Lector> lectorService = (List<Lector>) list.get(1);
-	private static List<Lection> lectionService = (List<Lection>) list.get(2);
-	private static List<Student> studentService = (List<Student>) list.get(3);
-	static {recountId(courseService,lectorService,lectionService,studentService);}
-	public static long setId() {
-		return ++id;
+	public static List<Course> courseService;
+	public static List<Lector> lectorService;
+	public static List<Lection> lectionService;
+	public static List<Student> studentService;
+	static {
+		recountId(courseService, lectorService, lectionService, studentService);
 	}
 
-	public static void recountId(List<BaseModel>... lists) {
-		for (List<BaseModel> x : lists) {
+	public static long getId() {
+		return ++id;
+	}
+	
+	public static void recountId(List<? extends BaseModel>... lists) {
+		for (List<? extends BaseModel> x : lists) {
 			for (BaseModel y : x) {
 				if (y.getId() > id) {
 					id = y.getId();
@@ -38,10 +40,13 @@ public class StorageDAO {
 		SerializeUtil.serializeObject(list, fileName);
 	}
 
-	@SuppressWarnings("unchecked")
 	public static void load(String fileName) throws ClassNotFoundException,
 			IOException {
-		list = (List<Object>) SerializeUtil.deserializeObject(fileName);
+		List<Object> list = (List<Object>) SerializeUtil.deserializeObject(fileName);
+		courseService = (List<Course>) list.get(0);
+		lectorService = (List<Lector>) list.get(1);
+		lectionService = (List<Lection>) list.get(2);
+		studentService = (List<Student>) list.get(3);
 	}
 
 }

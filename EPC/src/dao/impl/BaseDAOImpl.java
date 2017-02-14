@@ -7,13 +7,12 @@ import dao.BaseDAO;
 import model.BaseModel;
 
 public abstract class BaseDAOImpl<T extends BaseModel> implements BaseDAO<T> {
-	
-	private static Long id;
+
 	protected List<T> list;
 
 	@Override
 	public boolean create(T entity) {
-		id = StorageDAO.setId();
+		entity.setId(StorageDAO.getId());
 		return list.add(entity);
 	}
 
