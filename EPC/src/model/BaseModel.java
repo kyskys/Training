@@ -2,9 +2,12 @@ package model;
 
 import java.io.Serializable;
 
-public class BaseModel implements Serializable{
+import annotation.PrintableField;
 
+public class BaseModel implements Serializable {
+	@PrintableField(name = "name")
 	protected String name;
+	@PrintableField(name = "id", order = 2)
 	private Long id;
 
 	public String getName() {

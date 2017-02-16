@@ -2,6 +2,9 @@ package model;
 
 import java.util.ArrayList;
 
+import annotation.PrintableModel;
+
+@PrintableModel(name = "Courses")
 public class Course extends BaseModel {
 
 	private String informationOfCourse;

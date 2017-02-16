@@ -2,6 +2,9 @@ package model;
 
 import java.util.Date;
 
+import annotation.PrintableModel;
+
+@PrintableModel(name = "Lections")
 public class Lection extends BaseModel {
 	private Date date;
 	private Course course;

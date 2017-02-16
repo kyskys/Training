@@ -1,5 +1,8 @@
 package model;
 
+import annotation.PrintableModel;
+
+@PrintableModel(name = "Students")
 public class Student extends Human {
 	private Course course;
 

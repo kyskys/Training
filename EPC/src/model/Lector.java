@@ -2,6 +2,9 @@ package model;
 
 import java.util.ArrayList;
 
+import annotation.PrintableModel;
+
+@PrintableModel(name = "Lectors")
 public class Lector extends Human {
 
 	private ArrayList<Course> courses;
