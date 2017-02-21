@@ -6,7 +6,7 @@ import annotation.PrintableField;
 
 public class BaseModel implements Serializable {
 	@PrintableField(name = "name")
-	protected String name;
+	private String name;
 	@PrintableField(name = "id", order = 2)
 	private Long id;
 

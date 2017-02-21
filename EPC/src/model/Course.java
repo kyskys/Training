@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import annotation.PrintableModel;
 
-@PrintableModel(name = "Courses")
+@PrintableModel(name = "courses")
 public class Course extends BaseModel {
 
 	private String informationOfCourse;

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import annotation.PrintableModel;
 
-@PrintableModel(name = "Lectors")
+@PrintableModel(name = "lectors")
 public class Lector extends Human {
 
 	private ArrayList<Course> courses;
