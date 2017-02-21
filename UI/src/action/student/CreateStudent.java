@@ -11,7 +11,7 @@ public class CreateStudent implements Action {
 	public void doAction() {
 		StudentService ss = DependencyManager.getInstance(StudentService.class);
 		Student s = new Student();
-		System.out.println("vvedite nazvanie stydenta:");
+		System.out.println("type name of student:");
 		String name = ConsoleReader.readStringByConsole();
 		s.setName(name);
 		ss.create(s);

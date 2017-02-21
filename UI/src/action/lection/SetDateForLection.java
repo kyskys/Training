@@ -14,7 +14,7 @@ import service.LectionService;
 import service.LectorService;
 import util.ConsoleReader;
 
-public class AddDateToLection implements Action{
+public class SetDateForLection implements Action{
 
 	@Override
 	public void doAction() throws IllegalArgumentException, IllegalAccessException {
@@ -22,7 +22,7 @@ public class AddDateToLection implements Action{
 		List<Lection> list = ls.getAll(null);
 		Print.printList(list, Lection.class);
 		System.out.println("\nChoose lection:");
-		long n = ConsoleReader.readIntByConsole();
+		long n = ConsoleReader.readLongByConsole();
 		Lection l = ls.get(n);
 		Date d = ConsoleReader.readDateByConsole();
 		l.setDate(d);

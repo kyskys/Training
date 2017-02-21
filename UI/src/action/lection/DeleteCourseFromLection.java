@@ -19,7 +19,7 @@ public class DeleteCourseFromLection implements Action{
 		List<Lection> list = ls.getAll(null);
 		Print.printList(list, Lection.class);
 		System.out.println("\nChoose lection:");
-		long n = ConsoleReader.readIntByConsole();
+		long n = ConsoleReader.readLongByConsole();
 		Lection l = ls.get(n);
 		l.setCourse(null);
 	}

@@ -23,11 +23,11 @@ public class DeleteStudentFromCourse implements Action{
 		List<Student> list2 = ss.getAll(null);
 		Print.printList(list1, Course.class);
 		System.out.println("\nChoose course:");
-		long n = ConsoleReader.readIntByConsole();
+		long n = ConsoleReader.readLongByConsole();
 		Course c = cs.get(n);
 		Print.printList(list2, Student.class);
 		System.out.println("\nChoose course:");
-		n = ConsoleReader.readIntByConsole();
+		n = ConsoleReader.readLongByConsole();
 		Student s = ss.get(n);
 		c.deleteStudent(s);
 	}

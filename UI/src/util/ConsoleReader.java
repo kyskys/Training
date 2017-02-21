@@ -10,17 +10,17 @@ import java.util.Scanner;
 public class ConsoleReader {
 	private static Scanner in = new Scanner(System.in);
 
-	public static Long readIntByConsole() throws InputMismatchException,
+	public static Long readLongByConsole() throws InputMismatchException,
 			NoSuchElementException {
 		Long i;
 		try {
 			i = Long.valueOf(in.nextLine());
 		} catch (NumberFormatException e) {
 			System.out.println("neverniy vvod, povtorie vvod");
-			return readIntByConsole();
+			return readLongByConsole();
 		} catch (NoSuchElementException e) {
 			System.out.println("pystaya stroka, povtorite vvod");
-			return readIntByConsole();
+			return readLongByConsole();
 		}
 		return i;
 

@@ -17,7 +17,7 @@ public class DeleteLectorFromCourse implements Action{
 		List<Course> list = cs.getAll(null);
 		Print.printList(list, Course.class);
 		System.out.println("\nChoose course:");
-		long n = ConsoleReader.readIntByConsole();
+		long n = ConsoleReader.readLongByConsole();
 		Course c = cs.get(n);
 		c.setLector(null);
 	}

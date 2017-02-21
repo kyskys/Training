@@ -21,10 +21,10 @@ public class DeleteCourseFromLector implements Action {
 		List<Lector> list2 = ls.getAll(null);
 		Print.printList(list2, Lector.class);
 		System.out.println("\nChoose lector:");
-		long n = ConsoleReader.readIntByConsole();
+		long n = ConsoleReader.readLongByConsole();
 		Lector l = ls.get(n);
 		System.out.println("\nChoose course to delete:");
-		n = ConsoleReader.readIntByConsole();
+		n = ConsoleReader.readLongByConsole();
 		Course c = cs.get(n);
 		l.deleteCourse(c);
 

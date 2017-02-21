@@ -13,9 +13,9 @@ public class CreateLection implements Action {
 	public void doAction() {
 		LectionService ls = DependencyManager.getInstance(LectionService.class);
 		Lection l = new Lection();
-		System.out.println("vvedite nazvanie lekcii:");
+		System.out.println("type name of lection:");
 		String name = ConsoleReader.readStringByConsole();
-		System.out.println("vvedite daty lekcii:");
+		System.out.println("type date:");
 		Date date = ConsoleReader.readDateByConsole();
 		l.setName(name);
 		l.setDate(date);

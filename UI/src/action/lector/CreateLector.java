@@ -11,7 +11,7 @@ public class CreateLector implements Action {
 	public void doAction() {
 		LectorService ls = DependencyManager.getInstance(LectorService.class);
 		Lector l = new Lector();
-		System.out.println("vvedite nazvanie lektora:");
+		System.out.println("type name of lector:");
 		String name = ConsoleReader.readStringByConsole();
 		l.setName(name);
 		ls.create(l);

@@ -16,9 +16,9 @@ public class DeleteStudent implements Action {
 		StudentService ls = DependencyManager.getInstance(StudentService.class);
 		List<Student> list = ls.getAll(null);
 		Print.printList(list, Student.class);
-		System.out.println("\nviberite id dlya ydaleniya");
-		int n = ConsoleReader.readIntByConsole();
-		ls.delete(ls.get((long)n));
+		System.out.println("\nchoose id for deleting:");
+		long n = ConsoleReader.readLongByConsole();
+		ls.delete(ls.get(n));
 
 	}
 }

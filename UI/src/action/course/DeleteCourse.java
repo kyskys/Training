@@ -18,7 +18,7 @@ public class DeleteCourse implements Action {
 		List<Course> list = cs.getAll(null);
 		Print.printList(list, Course.class);
 		System.out.println("\nchoose id for deleting:");
-		long n = ConsoleReader.readIntByConsole();
+		long n = ConsoleReader.readLongByConsole();
 		cs.delete(cs.get(n));
 
 	}
