@@ -22,10 +22,10 @@ public class AddLectionToCourse implements Action{
 		LectionService ls = DependencyManager.getInstance(LectionService.class);
 		List<Lection> list2 = ls.getAll(null);
 		Print.printList(list1, Course.class);
-		System.out.println("Choose course:");
+		System.out.println("choose course:");
 		long n = ConsoleReader.readLongByConsole();
 		Print.printList(list2, Lection.class);
-		System.out.println("Choose lection to add:");
+		System.out.println("choose lection to add:");
 		long q = ConsoleReader.readLongByConsole();
 		cs.addLectionToCourse(q, n);
 	}

@@ -22,12 +22,11 @@ public class DeleteStudentFromCourse implements Action{
 		StudentService ss = DependencyManager.getInstance(StudentService.class);
 		List<Student> list2 = ss.getAll(null);
 		Print.printList(list1, Course.class);
-		System.out.println("\nChoose course:");
+		System.out.println("choose course:");
 		long n = ConsoleReader.readLongByConsole();
 		Print.printList(list2, Student.class);
-		System.out.println("\nChoose course:");
+		System.out.println("choose student to delete:");
 		long q = ConsoleReader.readLongByConsole();
 		cs.deleteStudentFromCourse(q, n);
 	}
-
 }

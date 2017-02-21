@@ -8,7 +8,6 @@ import model.Course;
 import model.Student;
 import resourses.DependencyManager;
 import service.CourseService;
-import service.LectorService;
 import service.StudentService;
 import util.ConsoleReader;
 
@@ -21,10 +20,10 @@ public class AddStudentToCourse implements Action{
 		StudentService ss = DependencyManager.getInstance(StudentService.class);
 		List<Student> list2 = ss.getAll(null);
 		Print.printList(list1, Course.class);
-		System.out.println("\nChoose course:");
+		System.out.println("choose course:");
 		long n = ConsoleReader.readLongByConsole();
 		Print.printList(list2, Student.class);
-		System.out.println("\nChoose student to add:");
+		System.out.println("choose student to add:");
 		long q = ConsoleReader.readLongByConsole();
 		cs.addStudentToCourse(q, n);
 	}

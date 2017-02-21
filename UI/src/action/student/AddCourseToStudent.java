@@ -21,14 +21,12 @@ public class AddCourseToStudent implements Action{
 		StudentService ss = DependencyManager.getInstance(StudentService.class);
 		List<Student> list2 = ss.getAll(null);
 		Print.printList(list2, Student.class);
-		System.out.println("\nchoose student:");
+		System.out.println("choose student:");
 		long n = ConsoleReader.readLongByConsole();
-		Student s = ss.get(n);
 		Print.printList(list1, Course.class);
-		System.out.println("\nChoose course to add:");
-		n = ConsoleReader.readLongByConsole();
-		Course c = cs.get(n);
-		s.setCourse(c);
+		System.out.println("Choose course to add:");
+		long q = ConsoleReader.readLongByConsole();
+		ss.addCourseToStudent(n, q);
 	}
 
 }

@@ -16,12 +16,16 @@ public class DeleteCourseFromLection implements Action{
 	@Override
 	public void doAction() throws IllegalArgumentException, IllegalAccessException {
 		LectionService ls = DependencyManager.getInstance(LectionService.class);
-		List<Lection> list = ls.getAll(null);
-		Print.printList(list, Lection.class);
-		System.out.println("\nChoose lection:");
+		List<Lection> list1 = ls.getAll(null);
+		CourseService cs = DependencyManager.getInstance(CourseService.class);
+		List<Course> list2 = cs.getAll(null);
+		Print.printList(list1, Lection.class);
+		System.out.println("choose lection:");
 		long n = ConsoleReader.readLongByConsole();
-		Lection l = ls.get(n);
-		l.setCourse(null);
+		Print.printList(list2, Course.class);
+		System.out.println("choose course to delete:");
+		long q = ConsoleReader.readLongByConsole();
+		ls.deleteLectionFromCourse(n, q);
 	}
 
 }

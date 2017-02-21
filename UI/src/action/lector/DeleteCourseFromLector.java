@@ -20,13 +20,12 @@ public class DeleteCourseFromLector implements Action {
 		LectorService ls = DependencyManager.getInstance(LectorService.class);
 		List<Lector> list2 = ls.getAll(null);
 		Print.printList(list2, Lector.class);
-		System.out.println("\nChoose lector:");
+		System.out.println("choose lector:");
 		long n = ConsoleReader.readLongByConsole();
-		Lector l = ls.get(n);
-		System.out.println("\nChoose course to delete:");
-		n = ConsoleReader.readLongByConsole();
-		Course c = cs.get(n);
-		l.deleteCourse(c);
+		Print.printList(list1, Course.class);
+		System.out.println("choose course to delete:");
+		long q = ConsoleReader.readLongByConsole();
+		ls.deleteCourseFromLector(n, q);
 
 	}
 

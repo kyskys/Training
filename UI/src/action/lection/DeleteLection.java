@@ -16,7 +16,7 @@ public class DeleteLection implements Action {
 		LectionService ls = DependencyManager.getInstance(LectionService.class);
 		List<Lection> list = ls.getAll(null);
 		Print.printList(list, Lection.class);
-		System.out.println("\nchoose id for deleting:");
+		System.out.println("choose id for deleting:");
 		long n = ConsoleReader.readLongByConsole();
 		ls.delete(ls.get(n));
 

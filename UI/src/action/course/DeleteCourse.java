@@ -17,7 +17,7 @@ public class DeleteCourse implements Action {
 		CourseService cs = DependencyManager.getInstance(CourseService.class);
 		List<Course> list = cs.getAll(null);
 		Print.printList(list, Course.class);
-		System.out.println("\nchoose id for deleting:");
+		System.out.println("choose id for deleting:");
 		long n = ConsoleReader.readLongByConsole();
 		cs.delete(cs.get(n));
 
