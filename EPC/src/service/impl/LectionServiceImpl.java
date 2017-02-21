@@ -32,14 +32,14 @@ public class LectionServiceImpl extends BaseServiceImpl<Lection> implements
 		Lection lection = lectionDAO.get(idLection);
 		Course course = courseDAO.get(idCourse);
 		lection.setCourse(course);
-		course.getLections().add(lection);
+		course.addLection(lection);
 	}
 
 	@Override
-	public void deleteLectionFromCourse(Long idLection) {
+	public void deleteLectionFromCourse(Long idLection, Long idCourse) {
 		Lection lection = lectionDAO.get(idLection);
-		Course course = courseDAO.get(lection.getCourse().getId());
-		course.getLections().remove(lection);
+		Course course = courseDAO.get(idCourse);
+		course.deleteLection(lection);
 		lection.setCourse(null);
 	}
 

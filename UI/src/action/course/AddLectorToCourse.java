@@ -22,12 +22,10 @@ public class AddLectorToCourse implements Action{
 		Print.printList(list1, Course.class);
 		System.out.println("\nChoose course:");
 		long n = ConsoleReader.readLongByConsole();
-		Course c = cs.get(n);
 		Print.printList(list2, Lector.class);
 		System.out.println("\nChoose lector to add:");
-		n = ConsoleReader.readLongByConsole();
-		Lector l = ls.get(n);
-		c.setLector(l);
+		long q = ConsoleReader.readLongByConsole();
+		cs.addLectorToCourse(q, n);
 	}
 
 }

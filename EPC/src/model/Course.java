@@ -8,8 +8,8 @@ import annotation.PrintableModel;
 public class Course extends BaseModel {
 
 	private String informationOfCourse;
-	private ArrayList<Lection> lections;
-	private ArrayList<Student> students;
+	private ArrayList<Lection> lections = new ArrayList<Lection>();
+	private ArrayList<Student> students = new ArrayList<Student>();
 	private Lector lector;
 
 	public Lector getLector() {

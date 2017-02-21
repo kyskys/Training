@@ -34,10 +34,10 @@ public class StudentServiceImpl extends BaseServiceImpl<Student> implements
 	}
 
 	@Override
-	public void deleteCourseFromStudent(Long idStudent) {
+	public void deleteCourseFromStudent(Long idStudent, Long idCourse) {
 		Student student = studentDAO.get(idStudent);
-		Course course = courseDAO.get(student.getCourse().getId());
-		course.getLections().remove(student);
+		Course course = courseDAO.get(idCourse);
+		course.deleteStudent(student);
 		student.setCourse(null);
 	}
 

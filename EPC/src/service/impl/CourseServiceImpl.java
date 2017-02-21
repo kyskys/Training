@@ -43,7 +43,7 @@ public class CourseServiceImpl extends BaseServiceImpl<Course> implements
 		Student student = studentDAO.get(idStudent);
 		Course course = courseDAO.get(idCourse);
 		student.setCourse(course);
-		course.getStudents().add(student);
+		course.addStudent(student);
 	}
 
 	@Override
@@ -51,14 +51,14 @@ public class CourseServiceImpl extends BaseServiceImpl<Course> implements
 		Student student = studentDAO.get(idStudent);
 		Course course = courseDAO.get(idCourse);
 		student.setCourse(null);
-		course.getStudents().remove(student);
+		course.deleteStudent(student);
 	}
 
 	@Override
 	public void addLectorToCourse(Long idLector, Long idCourse) {
 		Lector lector = lectorDAO.get(idLector);
 		Course course = courseDAO.get(idCourse);
-		lector.getCourses().add(course);
+		lector.addCourse(course);
 		course.setLector(lector);
 	}
 
@@ -66,8 +66,8 @@ public class CourseServiceImpl extends BaseServiceImpl<Course> implements
 	public void deleteLectorFromCourse(Long idLector, Long idCourse) {
 		Lector lector = lectorDAO.get(idLector);
 		Course course = courseDAO.get(idCourse);
-		course.getLections().remove(lector);
-		lector.getCourses().remove(course);
+		course.setLector(null);
+		lector.deleteCourse(course);
 	}
 
 	@Override
@@ -75,7 +75,7 @@ public class CourseServiceImpl extends BaseServiceImpl<Course> implements
 		Lection lection = lectionDAO.get(idLection);
 		Course course = courseDAO.get(idCourse);
 		lection.setCourse(course);
-		course.getLections().add(lection);
+		course.addLection(lection);
 	}
 
 	@Override
@@ -83,7 +83,7 @@ public class CourseServiceImpl extends BaseServiceImpl<Course> implements
 		Lection lection = lectionDAO.get(idLection);
 		Course course = courseDAO.get(idCourse);
 		lection.setCourse(null);
-		course.getLections().remove(lection);
+		course.deleteLection(lection);
 	}
 
 	@Override

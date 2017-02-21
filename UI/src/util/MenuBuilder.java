@@ -68,11 +68,11 @@ public class MenuBuilder {
 		lectionServ.Add(new MenuPoint(bd, "set date for lection", new SetDateForLection()));
 		lectionServ.Add(new MenuPoint(bd, "back"));
 		Menu studentServ = new Menu("Student menu");
-		lectionServ.Add(new MenuPoint(bd, "create student", new CreateStudent()));
-		lectionServ.Add(new MenuPoint(bd, "delete student", new DeleteStudent()));
-		lectionServ.Add(new MenuPoint(bd, "add course to student", new AddCourseToStudent()));
-		lectionServ.Add(new MenuPoint(bd, "delete course from student", new DeleteCourseFromStudent()));
-		lectionServ.Add(new MenuPoint(bd, "back"));
+		studentServ.Add(new MenuPoint(bd, "create student", new CreateStudent()));
+		studentServ.Add(new MenuPoint(bd, "delete student", new DeleteStudent()));
+		studentServ.Add(new MenuPoint(bd, "add course to student", new AddCourseToStudent()));
+		studentServ.Add(new MenuPoint(bd, "delete course from student", new DeleteCourseFromStudent()));
+		studentServ.Add(new MenuPoint(bd, "back"));
 		bd.Add(new MenuPoint(courseServ, "course service"));
 		bd.Add(new MenuPoint(lectorServ, "lector service"));
 		bd.Add(new MenuPoint(lectionServ, "lection service"));

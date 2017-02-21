@@ -23,12 +23,10 @@ public class AddStudentToCourse implements Action{
 		Print.printList(list1, Course.class);
 		System.out.println("\nChoose course:");
 		long n = ConsoleReader.readLongByConsole();
-		Course c = cs.get(n);
 		Print.printList(list2, Student.class);
 		System.out.println("\nChoose student to add:");
-		n = ConsoleReader.readLongByConsole();
-		Student s = ss.get(n);
-		c.addStudent(s);
+		long q = ConsoleReader.readLongByConsole();
+		cs.addStudentToCourse(q, n);
 	}
 
 }

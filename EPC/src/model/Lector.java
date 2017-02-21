@@ -7,7 +7,7 @@ import annotation.PrintableModel;
 @PrintableModel(name = "lectors")
 public class Lector extends Human {
 
-	private ArrayList<Course> courses;
+	private ArrayList<Course> courses = new ArrayList<Course>();
 
 	public ArrayList<Course> getCourses() {
 		return courses;

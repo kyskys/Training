@@ -29,7 +29,7 @@ public class LectorServiceImpl extends BaseServiceImpl<Lector> implements
 	public void addCourseToLector(Long idLector, Long idCourse) {
 		Lector lector = lectorDAO.get(idLector);
 		Course course = courseDAO.get(idCourse);
-		lector.getCourses().add(course);
+		lector.addCourse(course);
 		course.setLector(lector);
 	}
 
@@ -38,7 +38,7 @@ public class LectorServiceImpl extends BaseServiceImpl<Lector> implements
 		Lector lector = lectorDAO.get(idLector);
 		Course course = courseDAO.get(idCourse);
 		course.setLector(null);
-		lector.getCourses().remove(course);
+		lector.deleteCourse(course);
 	}
 
 	@Override
