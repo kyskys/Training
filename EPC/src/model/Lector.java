@@ -22,4 +22,11 @@ public class Lector extends Human {
 		return Role.LECTOR;
 	}
 
+	public void addCourse(Course course) {
+		courses.add(course);
+	}
+
+	public void deleteCourse(Course course) {
+		courses.remove(course);
+	}
 }

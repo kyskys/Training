@@ -10,11 +10,11 @@ import java.util.Scanner;
 public class ConsoleReader {
 	private static Scanner in = new Scanner(System.in);
 
-	public static Integer readIntByConsole() throws InputMismatchException,
+	public static Long readIntByConsole() throws InputMismatchException,
 			NoSuchElementException {
-		Integer i;
+		Long i;
 		try {
-			i = Integer.valueOf(in.nextLine());
+			i = Long.valueOf(in.nextLine());
 		} catch (NumberFormatException e) {
 			System.out.println("neverniy vvod, povtorie vvod");
 			return readIntByConsole();

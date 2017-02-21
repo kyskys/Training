@@ -7,20 +7,18 @@ import resourses.DependencyManager;
 import service.LectorService;
 import util.ConsoleReader;
 import action.Action;
+import annotation.Print;
 
 public class DeleteLector implements Action {
 
 	@Override
-	public void doAction() {
+	public void doAction() throws IllegalArgumentException, IllegalAccessException {
 		LectorService ls = DependencyManager.getInstance(LectorService.class);
 		List<Lector> list = ls.getAll(null);
-		for (int i = 0; i < list.size(); i++) {
-			System.out.println(i + ". " + list.get(i) + ", id = " + list.get(i).getId()
-					+ "\n");
-		}
-		System.out.println("\nviberite id dlya ydaleniya");
-		int n = ConsoleReader.readIntByConsole();
-		ls.delete(ls.get((long)n));
+		Print.printList(list, Lector.class);
+		System.out.println("\nchoose id for deleting:");
+		long n = ConsoleReader.readIntByConsole();
+		ls.delete(ls.get(n));
 
 	}
 }

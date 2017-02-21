@@ -34,16 +34,17 @@ public class Print<T extends BaseModel> {
 	public static <T> void printList(List<T> list, Class<T> c) throws IllegalArgumentException, IllegalAccessException {
 		if (c.isAnnotationPresent(PrintableModel.class)) {
 			System.out.println("List of " + c.getAnnotation(PrintableModel.class).name());
+			Class<T> clazz = c;
 			List<FieldInfo> lf = new ArrayList<FieldInfo>();
-				while (c != Object.class) {
-					Field[] fields = c.getDeclaredFields();
+				while (clazz != Object.class) {
+					Field[] fields = clazz.getDeclaredFields();
 					for (Field f : fields) {
 						if (f.isAnnotationPresent(PrintableField.class)) {
 							f.setAccessible(true);
 							lf.add(new FieldInfo(f, f.getAnnotation(PrintableField.class)));
 						}
 					}
-					c = (Class<T>) c.getSuperclass();
+					clazz = (Class<T>) clazz.getSuperclass();
 				}
 			lf.sort(new SortByOrder());
 			for(FieldInfo fi : lf) {

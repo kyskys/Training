@@ -17,7 +17,7 @@ public class MenuPoint {
 		this.menu=menu;
 	}
 
-	public Menu doWork() {
+	public Menu doWork() throws IllegalArgumentException, IllegalAccessException {
 		if (this.act!=null) {
 			act.doAction();
 		}

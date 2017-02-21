@@ -43,4 +43,20 @@ public class Course extends BaseModel {
 	public void setStudents(ArrayList<Student> students) {
 		this.students = students;
 	}
+
+	public void addLection(Lection lection) {
+		lections.add(lection);
+	}
+
+	public void addStudent(Student student) {
+		students.add(student);
+	}
+
+	public void deleteLection(Lection lection) {
+		lections.remove(lection);
+	}
+
+	public void deleteStudent(Student student) {
+		students.remove(student);
+	}
 }

@@ -8,12 +8,11 @@ import menu.Menu;
 
 public class Main {
 
-	public static void main(String[] args) throws IOException, ClassNotFoundException {
+	public static void main(String[] args) throws IOException, ClassNotFoundException, IllegalArgumentException, IllegalAccessException {
 		StorageDAO.load("file.txt");
 		Menu m = MenuBuilder.buildMenu();
 		Controller.start(m);
 		StorageDAO.save("file.txt");
 		
 	}
-
 }
