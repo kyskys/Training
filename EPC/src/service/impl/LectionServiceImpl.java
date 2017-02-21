@@ -44,7 +44,7 @@ public class LectionServiceImpl extends BaseServiceImpl<Lection> implements
 	}
 
 	@Override
-	public List<Lection> ListLectionOnDate(Date date) {
+	public List<Lection> ListOfLectionsOnDate(Date date) {
 		List<Lection> list = new ArrayList<Lection>();
 		for (Lection l : lectionDAO.getAll()) {
 			if (l.getDate().compareTo(date) == 0) {

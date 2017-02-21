@@ -9,12 +9,12 @@ import resourses.DependencyManager;
 import service.CourseService;
 import sort.SortParams;
 
-public class SortCourseByLector implements Action{
+public class SortCourseByName implements Action{
 
 	@Override
 	public void doAction() throws IllegalArgumentException, IllegalAccessException {
 		CourseService cs = DependencyManager.getInstance(CourseService.class);
-		List<Course> list = cs.getAll(SortParams.LECTOR);
+		List<Course> list = cs.getAll(SortParams.NAME);
 		Print.printList(list, Course.class);
 	}
 

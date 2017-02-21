@@ -1,0 +1,21 @@
+package action.lector;
+
+import java.util.List;
+
+import action.Action;
+import annotation.Print;
+import model.Lector;
+import resourses.DependencyManager;
+import service.LectorService;
+import sort.SortParams;
+
+public class SortLectorByCourseCount implements Action{
+
+	@Override
+	public void doAction() throws IllegalArgumentException, IllegalAccessException {
+		LectorService ls = DependencyManager.getInstance(LectorService.class);
+		List<Lector> list = ls.getAll(SortParams.COURSE_COUNT);
+		Print.printList(list, Lector.class);
+	}
+
+}

@@ -13,6 +13,7 @@ import resourses.DependencyManager;
 import service.CourseService;
 import sort.DateType;
 import sort.SortByName;
+import sort.SortCourseByLector;
 import sort.SortCourseByStartDate;
 import sort.SortCourseByStudentsCount;
 import sort.SortParams;
@@ -123,6 +124,9 @@ public class CourseServiceImpl extends BaseServiceImpl<Course> implements
 			}
 			case DATE: {
 				list.sort(new SortCourseByStartDate());
+			}
+			case LECTOR: {
+				list.sort(new SortCourseByLector());
 			}
 			default:
 				break;

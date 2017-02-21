@@ -5,5 +5,6 @@ public enum SortParams {
 	START_DATE,
 	STUDENTS_COUNT,
 	DATE,
-	COURSE_COUNT;
+	COURSE_COUNT,
+	LECTOR;
 }
