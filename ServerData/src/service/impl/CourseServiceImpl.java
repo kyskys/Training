@@ -87,10 +87,10 @@ public class CourseServiceImpl extends BaseServiceImpl<Course> implements
 	}
 
 	@Override
-	public List<Course> ListCourseWithDate(Date date, DateType dp) {
+	public List<Course> ListCourseWithDate(Date date, DateType dt) {
 		List<Course> l = new ArrayList<Course>();
-		if (dp != null) {
-			switch (dp) {
+		if (dt != null) {
+			switch (dt) {
 			case BEFORE: {
 				for (Course c : courseDAO.getAll()) {
 					if (c.getLections().get(0).getDate().before(date)) {
