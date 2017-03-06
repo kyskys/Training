@@ -10,6 +10,19 @@ import sort.DateType;
 import sort.SortParams;
 
 public class Facade {
+
+	private static Facade instance = Facade.getInstance();
+
+	private Facade() {
+	}
+
+	public static Facade getInstance() {
+		if (instance == null)
+			return new Facade();
+		else
+			return instance;
+	}
+
 	CourseService courseService = DependencyManager
 			.getInstance(CourseService.class);
 	LectorService lectorService = DependencyManager
