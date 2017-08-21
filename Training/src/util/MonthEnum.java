@@ -8,8 +8,7 @@ public enum MonthEnum {
 
 		@Override
 		public Season getSeason() {
-			// TODO Auto-generated method stub
-			return null;
+			return Season.WINTER;
 		}
 
 	},
@@ -17,14 +16,12 @@ public enum MonthEnum {
 
 		@Override
 		public Number getNumber() {
-			// TODO Auto-generated method stub
-			return null;
+			return Number.TWO;
 		}
 
 		@Override
 		public Season getSeason() {
-			// TODO Auto-generated method stub
-			return null;
+			return Season.WINTER;
 		}
 
 	},
@@ -32,14 +29,12 @@ public enum MonthEnum {
 
 		@Override
 		public Number getNumber() {
-			// TODO Auto-generated method stub
-			return null;
+			return Number.THREE;
 		}
 
 		@Override
 		public Season getSeason() {
-			// TODO Auto-generated method stub
-			return null;
+			return Season.SPRING;
 		}
 
 	},
@@ -47,14 +42,12 @@ public enum MonthEnum {
 
 		@Override
 		public Number getNumber() {
-			// TODO Auto-generated method stub
-			return null;
+			return Number.FOUR;
 		}
 
 		@Override
 		public Season getSeason() {
-			// TODO Auto-generated method stub
-			return null;
+			return Season.SPRING;
 		}
 
 	},
@@ -62,14 +55,12 @@ public enum MonthEnum {
 
 		@Override
 		public Number getNumber() {
-			// TODO Auto-generated method stub
-			return null;
+			return Number.FIVE;
 		}
 
 		@Override
 		public Season getSeason() {
-			// TODO Auto-generated method stub
-			return null;
+			return Season.SPRING;
 		}
 
 	},
@@ -77,14 +68,12 @@ public enum MonthEnum {
 
 		@Override
 		public Number getNumber() {
-			// TODO Auto-generated method stub
-			return null;
+			return Number.SIX;
 		}
 
 		@Override
 		public Season getSeason() {
-			// TODO Auto-generated method stub
-			return null;
+			return Season.SUMMER;
 		}
 
 	},
@@ -92,14 +81,12 @@ public enum MonthEnum {
 
 		@Override
 		public Number getNumber() {
-			// TODO Auto-generated method stub
-			return null;
+			return Number.SEVEN;
 		}
 
 		@Override
 		public Season getSeason() {
-			// TODO Auto-generated method stub
-			return null;
+			return Season.SUMMER;
 		}
 
 	},
@@ -107,14 +94,12 @@ public enum MonthEnum {
 
 		@Override
 		public Number getNumber() {
-			// TODO Auto-generated method stub
-			return null;
+			return Number.EIGHT;
 		}
 
 		@Override
 		public Season getSeason() {
-			// TODO Auto-generated method stub
-			return null;
+			return Season.SUMMER;
 		}
 
 	},
@@ -122,14 +107,12 @@ public enum MonthEnum {
 
 		@Override
 		public Number getNumber() {
-			// TODO Auto-generated method stub
-			return null;
+			return Number.NINE;
 		}
 
 		@Override
 		public Season getSeason() {
-			// TODO Auto-generated method stub
-			return null;
+			return Season.AUTUMN;
 		}
 
 	},
@@ -137,14 +120,12 @@ public enum MonthEnum {
 
 		@Override
 		public Number getNumber() {
-			// TODO Auto-generated method stub
-			return null;
+			return Number.TEN;
 		}
 
 		@Override
 		public Season getSeason() {
-			// TODO Auto-generated method stub
-			return null;
+			return Season.AUTUMN;
 		}
 
 	},
@@ -152,14 +133,12 @@ public enum MonthEnum {
 
 		@Override
 		public Number getNumber() {
-			// TODO Auto-generated method stub
-			return null;
+			return Number.ELEVEN;
 		}
 
 		@Override
 		public Season getSeason() {
-			// TODO Auto-generated method stub
-			return null;
+			return Season.AUTUMN;
 		}
 
 	},
@@ -167,14 +146,12 @@ public enum MonthEnum {
 
 		@Override
 		public Number getNumber() {
-			// TODO Auto-generated method stub
-			return null;
+			return Number.TWELVE;
 		}
 
 		@Override
 		public Season getSeason() {
-			// TODO Auto-generated method stub
-			return null;
+			return Season.WINTER;
 		}
 
 	};
@@ -184,9 +161,9 @@ public enum MonthEnum {
 }
 
 enum Number {
-	ONE, TWO, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT, NINE, TEN, ELEVEN, TWELVE
+	ONE, TWO, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT, NINE, TEN, ELEVEN, TWELVE;
 }
 
 enum Season {
-	SPRING, SUMMER, AUTUMN, WINTER
+	SPRING, SUMMER, AUTUMN, WINTER;
 }
