@@ -2,9 +2,10 @@ package util;
 
 public class Helper {
 	@SuppressWarnings("unchecked")
-	public <T extends Object> T stringParse(String str, T toParse) {
-		T result = 
-		return (T) str;
+	public static <T extends Object> T stringParse(String str, Class<?> clazz) throws InstantiationException, IllegalAccessException {
+		//T result = (T) clazz.newInstance();
+		T result = (T) str;
+		return result;
 	}
 
 }
