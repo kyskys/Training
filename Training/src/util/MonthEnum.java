@@ -1,167 +1,22 @@
 package util;
 
 public enum MonthEnum {
-	JANUARY {
-		public Number getNumber() {
-			return Number.ONE;
-		}
+	JANUARY(1, Season.WINTER), FEBRUARY(2, Season.WINTER), MARCH(3, Season.SPRING), APRIL(4, Season.SPRING), MAY(5,
+			Season.SPRING), JUNE(6, Season.SUMMER), JULY(7, Season.SUMMER), AUGUST(8, Season.SUMMER), SEPTEMBER(9,
+					Season.AUTUMN), OCTOBER(10,
+							Season.AUTUMN), NOVEMBER(11, Season.AUTUMN), DECEMBER(12, Season.WINTER);
 
-		@Override
-		public Season getSeason() {
-			return Season.WINTER;
-		}
+	MonthEnum(int n, Season s) {
+		this.s = s;
+		this.n = n;
+	}
 
-	},
-	FEBRUARY {
+	Season s;
+	int n;
 
-		@Override
-		public Number getNumber() {
-			return Number.TWO;
-		}
-
-		@Override
-		public Season getSeason() {
-			return Season.WINTER;
-		}
-
-	},
-	MARCH {
-
-		@Override
-		public Number getNumber() {
-			return Number.THREE;
-		}
-
-		@Override
-		public Season getSeason() {
-			return Season.SPRING;
-		}
-
-	},
-	APRIL {
-
-		@Override
-		public Number getNumber() {
-			return Number.FOUR;
-		}
-
-		@Override
-		public Season getSeason() {
-			return Season.SPRING;
-		}
-
-	},
-	MAY {
-
-		@Override
-		public Number getNumber() {
-			return Number.FIVE;
-		}
-
-		@Override
-		public Season getSeason() {
-			return Season.SPRING;
-		}
-
-	},
-	JUNE {
-
-		@Override
-		public Number getNumber() {
-			return Number.SIX;
-		}
-
-		@Override
-		public Season getSeason() {
-			return Season.SUMMER;
-		}
-
-	},
-	JULY {
-
-		@Override
-		public Number getNumber() {
-			return Number.SEVEN;
-		}
-
-		@Override
-		public Season getSeason() {
-			return Season.SUMMER;
-		}
-
-	},
-	AUGUST {
-
-		@Override
-		public Number getNumber() {
-			return Number.EIGHT;
-		}
-
-		@Override
-		public Season getSeason() {
-			return Season.SUMMER;
-		}
-
-	},
-	SEPTEMBER {
-
-		@Override
-		public Number getNumber() {
-			return Number.NINE;
-		}
-
-		@Override
-		public Season getSeason() {
-			return Season.AUTUMN;
-		}
-
-	},
-	OCTOBER {
-
-		@Override
-		public Number getNumber() {
-			return Number.TEN;
-		}
-
-		@Override
-		public Season getSeason() {
-			return Season.AUTUMN;
-		}
-
-	},
-	NOVEMBER {
-
-		@Override
-		public Number getNumber() {
-			return Number.ELEVEN;
-		}
-
-		@Override
-		public Season getSeason() {
-			return Season.AUTUMN;
-		}
-
-	},
-	DECEMBER {
-
-		@Override
-		public Number getNumber() {
-			return Number.TWELVE;
-		}
-
-		@Override
-		public Season getSeason() {
-			return Season.WINTER;
-		}
-
-	};
-	public abstract Number getNumber();
-
-	public abstract Season getSeason();
-}
-
-enum Number {
-	ONE, TWO, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT, NINE, TEN, ELEVEN, TWELVE;
+	public String toString() {
+		return ("number: " + n + " season: " + s);
+	}
 }
 
 enum Season {
