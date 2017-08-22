@@ -1,11 +1,14 @@
 package util;
 
 public class Helper {
-	@SuppressWarnings("unchecked")
-	public static <T extends Object> T stringParse(String str, Class<?> clazz) throws InstantiationException, IllegalAccessException {
-		//T result = (T) clazz.newInstance();
-		T result = (T) str;
-		return result;
+	public static Integer strToInt (String str) {
+		return new Integer(str);
+	}
+	public static Double strToDouble (String str) {
+		return new Double(str);
+	}
+	public static Float strToFloat (String str) {
+		return new Float(str);
+	}
 	}
 
-}
