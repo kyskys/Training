@@ -2,12 +2,13 @@ package controller;
 
 import java.util.Scanner;
 
+import util.FibonacciNumber;
 import util.SimpleNumber;
 
 public class Controller {
 	private static Scanner in = new Scanner(System.in);
 	private static boolean isEnd = false;
-
+	private static Object toPrint;
 	public static void start() {
 		while (true) {
 			if (isEnd) {
@@ -20,10 +21,13 @@ public class Controller {
 			switch (n) {
 			case (1): {
 				System.out.println("type number");
-				SimpleNumber.evaluate(in.nextInt());
+				toPrint = SimpleNumber.evaluate(in.nextInt());
+				System.out.println(toPrint);
 				break;
 			}
 			case (2): {
+				System.out.println("type number");
+				toPrint = FibonacciNumber.evaluate(in.nextInt());
 				break;
 			}
 			case (3): {
