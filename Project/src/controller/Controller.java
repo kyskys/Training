@@ -2,6 +2,8 @@ package controller;
 
 import java.util.Scanner;
 
+import util.SimpleNumber;
+
 public class Controller {
 	private static Scanner in = new Scanner(System.in);
 	private static boolean isEnd = false;
@@ -17,6 +19,8 @@ public class Controller {
 			int n = in.nextInt();
 			switch (n) {
 			case (1): {
+				System.out.println("type number");
+				SimpleNumber.evaluate(in.nextInt());
 				break;
 			}
 			case (2): {
