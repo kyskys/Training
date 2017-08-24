@@ -6,6 +6,7 @@ import java.util.List;
 public class SimpleNumber {
 	public static Object evaluate(Integer n) {
 		List<Integer> l = new ArrayList<Integer>();
+		l.add(2);
 		for (int i = 3; i < n; i += 2) {
 			l.add(i);
 		}

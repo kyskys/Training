@@ -28,6 +28,7 @@ public class Controller {
 			case (2): {
 				System.out.println("type number");
 				toPrint = FibonacciNumber.evaluate(in.nextInt());
+				System.out.println(toPrint);
 				break;
 			}
 			case (3): {
