@@ -3,6 +3,7 @@ package controller;
 import java.util.Scanner;
 
 import util.FibonacciNumber;
+import util.LineCrossing;
 import util.SimpleNumber;
 
 public class Controller {
@@ -32,6 +33,15 @@ public class Controller {
 				break;
 			}
 			case (3): {
+				System.out.println("type x1");
+				int x1=in.nextInt();
+				System.out.println("type y1");
+				int y1=in.nextInt();
+				System.out.println("type x2");
+				int x2=in.nextInt();
+				System.out.println("type y2");
+				int y2=in.nextInt();
+				toPrint = LineCrossing.evaluate(x1,y1,x2,y2);
 				break;
 			}
 			case (4): {

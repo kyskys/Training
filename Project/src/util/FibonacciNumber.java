@@ -14,6 +14,7 @@ public class FibonacciNumber {
 			a = b;
 			b = f;
 			l.add(f);
+			l.add(b);
 		}
 		return l;
 	}
