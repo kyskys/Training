@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 import util.FibonacciNumber;
 import util.LineCrossing;
+import util.Palindrome;
 import util.SimpleNumber;
 
 public class Controller {
@@ -48,6 +49,9 @@ public class Controller {
 				break;
 			}
 			case (5): {
+				System.out.println("type word to check");
+				toPrint = Palindrome.evaluate(in.next());
+				System.out.println(toPrint);
 				break;
 			}
 			case (6): {
