@@ -4,17 +4,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FibonacciNumber {
-	public static Object evaluate(int n) {
-		List<Integer> l = new ArrayList<Integer>();
-		int a = 1;
-		int b = 1;
+	public static List<?> evaluate(int n) {
+		List<Long> l = new ArrayList<Long>();
+		long a = 1;
+		long b = 1;
 		l.add(a);
 		l.add(b);
-		for (int f = a + b; f < n; f = a + b) {
+		for (long f = a + b; f < n; f = a + b) {
 			a = b;
 			b = f;
 			l.add(f);
-			l.add(b);
 		}
 		return l;
 	}

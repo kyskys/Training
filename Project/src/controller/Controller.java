@@ -12,10 +12,7 @@ public class Controller {
 	private static boolean isEnd = false;
 	private static Object toPrint;
 	public static void start() {
-		while (true) {
-			if (isEnd) {
-				break;
-			}
+		while (!isEnd) {
 			System.out.println("1. simple number\n2. fibonacci number\n3. line crossing"
 					+ "\n4. least common multipler / greatest common divisor\n5. palindrome"
 					+ "\n6. number removing\n7. exit");
@@ -24,13 +21,12 @@ public class Controller {
 			case (1): {
 				System.out.println("type number");
 				toPrint = SimpleNumber.evaluate(in.nextInt());
-				System.out.println(toPrint);
+				
 				break;
 			}
 			case (2): {
 				System.out.println("type number");
 				toPrint = FibonacciNumber.evaluate(in.nextInt());
-				System.out.println(toPrint);
 				break;
 			}
 			case (3): {
@@ -51,7 +47,6 @@ public class Controller {
 			case (5): {
 				System.out.println("type word to check");
 				toPrint = Palindrome.evaluate(in.next());
-				System.out.println(toPrint);
 				break;
 			}
 			case (6): {
@@ -62,6 +57,7 @@ public class Controller {
 				break;
 			}
 			}
+			System.out.println(toPrint);
 		}
 	}
 }

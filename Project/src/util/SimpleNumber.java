@@ -4,14 +4,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SimpleNumber {
-	public static Object evaluate(Integer n) {
-		List<Integer> l = new ArrayList<Integer>();
-		l.add(2);
-		for (int i = 3; i < n; i += 2) {
+	public static List<?> evaluate(Integer n) {
+		List<Long> l = new ArrayList<Long>();
+		l.add((long) 2);
+		for (long i = 3; i < n; i += 2) {
 			l.add(i);
 		}
-		for (Integer i = 3; i * i < n; i += 2) {
-			for (Integer j = i * i; j <= n; j += i) {
+		for (long i = 3; i * i < n; i += 2) {
+			for (long j = i * i; j <= n; j += i) {
 				if (l.contains(j)) {
 					l.remove(j);
 				}
