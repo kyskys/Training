@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FibonacciNumber {
-	public static List<?> evaluate(int n) {
+	public static List<Long> evaluate(int n) {
 		List<Long> l = new ArrayList<Long>();
 		long a = 1;
 		long b = 1;

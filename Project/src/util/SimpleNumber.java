@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SimpleNumber {
-	public static List<?> evaluate(Integer n) {
+	public static List<Long> evaluate(Integer n) {
 		List<Long> l = new ArrayList<Long>();
 		l.add((long) 2);
 		for (long i = 3; i < n; i += 2) {
