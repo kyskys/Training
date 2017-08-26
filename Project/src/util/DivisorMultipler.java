@@ -5,7 +5,7 @@ public class DivisorMultipler {
 	public static String evaluate(int n1, int n2) {
 		double divisor = gcd(n1, n2);
 		double multipler = lcm(n1,n2,divisor);
-		return("gcd: "+divisor+"/nlcm: "+multipler);
+		return("gcd: "+divisor+"\nlcm: "+multipler);
 	}
 
 	private static double gcd(int n1, int n2) {
