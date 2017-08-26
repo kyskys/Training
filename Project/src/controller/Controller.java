@@ -2,8 +2,10 @@ package controller;
 
 import java.util.Scanner;
 
+import util.DivisorMultipler;
 import util.FibonacciNumber;
 import util.LineCrossing;
+import util.NumberRemoving;
 import util.Palindrome;
 import util.SimpleNumber;
 
@@ -30,26 +32,41 @@ public class Controller {
 				break;
 			}
 			case (3): {
-				System.out.println("type x1");
-				int x1=in.nextInt();
-				System.out.println("type y1");
-				int y1=in.nextInt();
-				System.out.println("type x2");
-				int x2=in.nextInt();
-				System.out.println("type y2");
-				int y2=in.nextInt();
-				toPrint = LineCrossing.evaluate(x1,y1,x2,y2);
+				System.out.println("type x11");
+				int x11=in.nextInt();
+				System.out.println("type y11");
+				int y11=in.nextInt();
+				System.out.println("type x12");
+				int x12=in.nextInt();
+				System.out.println("type y12");
+				int y12=in.nextInt();
+				System.out.println("type x21");
+				int x21=in.nextInt();
+				System.out.println("type y21");
+				int y21=in.nextInt();
+				System.out.println("type x22");
+				int x22=in.nextInt();
+				System.out.println("type y22");
+				int y22=in.nextInt();
+				toPrint = LineCrossing.evaluate(x11,y11,x12,y12,x21,y21,x22,y22);
 				break;
 			}
 			case (4): {
+				System.out.println("type 1st number");
+				int n1=in.nextInt();
+				System.out.println("type 2nd number");
+				int n2=in.nextInt();
+				toPrint = DivisorMultipler.evaluate(n1,n2);
 				break;
 			}
 			case (5): {
 				System.out.println("type word to check");
-				toPrint = Palindrome.evaluate(in.next());
+				toPrint = Palindrome.evaluate(in.nextLine());
 				break;
 			}
 			case (6): {
+				System.out.println("type word to check");
+				toPrint = NumberRemoving.evaluate(in.next());
 				break;
 			}
 			case (7): {
